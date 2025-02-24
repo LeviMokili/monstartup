@@ -1,0 +1,1 @@
+C:\Users\user\AndroidStudioProjects\startup\build\app\intermediates\cxx\Debug\228241m1\obj\x86_64
