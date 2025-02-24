@@ -27,7 +27,7 @@ class _HomeState extends State<Home> {
        children:  [
          Padding(
            padding: EdgeInsets.only(right: 260),
-           child: Text('Shorts Videos', style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+           child: Text('Shorts', style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
          ),
          SizedBox(height: 5,),
          Shorts(),

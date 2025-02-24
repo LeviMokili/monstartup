@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:startup/views/auth/login.dart';
 import 'package:startup/views/auth/signup.dart';
 import 'package:startup/views/home.dart';
+import 'package:startup/views/my_bars.dart';
 import 'package:startup/views/schools/school_details.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Plinedu app',
+      title: 'New app',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,

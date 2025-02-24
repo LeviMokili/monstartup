@@ -30,11 +30,11 @@ class _HomePostState extends State<HomePost> {
                         child: Container(
                           width: 40,
                           height: 40,
-
                           decoration: const BoxDecoration(
                             color: Colors.blueGrey,
                             shape: BoxShape.circle
                           ),
+
                         ),
                       ),
 
@@ -70,15 +70,14 @@ class _HomePostState extends State<HomePost> {
                         padding: EdgeInsets.only(top: 2),
                         child: Text('##Conventionnée Catholique',style: TextStyle(fontSize: 8, color: Color(0xFFF6426C)),),
                       ),
+
                     ),
                   ),
                   const SizedBox(height: 10,),
                   Container(
-                    height: 272,
+                    height: 270,
                     width: double.infinity,
                     color: Colors.blueGrey,
-                    
-
 
                   ),
                   const SizedBox(height: 10,),
