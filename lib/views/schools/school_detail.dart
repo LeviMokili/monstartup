@@ -9,6 +9,8 @@ class SchoolDetail extends StatefulWidget {
 class _SchoolDetailState extends State<SchoolDetail> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+
+    );
   }
 }
