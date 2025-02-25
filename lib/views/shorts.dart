@@ -20,6 +20,7 @@ class _ShortsState extends State<Shorts> {
            width: 100,
            margin: const EdgeInsets.all(5),
            color: Colors.deepPurpleAccent,
+
          );
        },
      ),
