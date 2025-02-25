@@ -15,11 +15,11 @@ class _ShortsState extends State<Shorts> {
        scrollDirection: Axis.horizontal,
        itemCount: 10,
        itemBuilder: (context, index){
+
          return Container(
            width: 100,
            margin: const EdgeInsets.all(5),
            color: Colors.deepPurpleAccent,
-
          );
        },
      ),
