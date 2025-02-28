@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
+import 'package:startup/views/schools/school_profile.dart';
 class HomePost extends StatefulWidget {
   const HomePost({super.key});
 
@@ -22,41 +23,47 @@ class _HomePostState extends State<HomePost> {
               height: 500,
               child: Column(
                 children: [
-                  Row(
-                    children: [
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=> const SchoolProfile()), (route) => false);
 
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          width: 40,
-                          height: 40,
-                          decoration: const BoxDecoration(
-                            color: Colors.blueGrey,
-                            shape: BoxShape.circle
+                    },
+                    child: Row(
+                      children: [
+
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            width: 40,
+                            height: 40,
+                            decoration: const BoxDecoration(
+                              color: Colors.blueGrey,
+                              shape: BoxShape.circle
+                            ),
+
                           ),
-
                         ),
-                      ),
 
-                      const Column(
-                        children: [
-                          Row(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(right: 74),
-                                child: Text('Collège Saint Raphael',
-                                  style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),),
-                              ),
+                        const Column(
+                          children: [
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(right: 74),
+                                  child: Text('Collège Saint Raphael',
+                                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),),
+                                ),
 
 
-                            ],
-                          ),
-                          Text('kinshasa, République démocratique du Congo',
-                            style: TextStyle(fontSize: 10, fontWeight: FontWeight.w200),)
-                        ],
-                      )
+                              ],
+                            ),
+                            Text('Kinshasa, République démocratique du Congo',
+                              style: TextStyle(fontSize: 10, fontWeight: FontWeight.w200),)
+                          ],
+                        )
 
-                    ],
+                      ],
+                    ),
                   ),
                   const SizedBox(height: 10,),
 
@@ -75,7 +82,7 @@ class _HomePostState extends State<HomePost> {
                   ),
                   const SizedBox(height: 10,),
                   Container(
-                    height: 270,
+                    height: 330,
                     width: double.infinity,
                     color: Colors.blueGrey,
 
@@ -97,7 +104,7 @@ class _HomePostState extends State<HomePost> {
                            padding: EdgeInsets.only(bottom: 4),
                            child: Text('243', style: TextStyle(fontSize: 12),),
                          ),
-                        
+
 
                          GestureDetector(
                            onTap: ()=> print('okay'),
