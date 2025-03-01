@@ -143,7 +143,7 @@ class _UniversityProfileState extends State<UniversityProfile> {
                                      const SizedBox(height: 20,),
 
                                      Padding(
-                                       padding: const EdgeInsets.only(left: 20),
+                                       padding: const EdgeInsets.only(left: 5),
                                        child: Row(
                                          children: [
                                           Row(
@@ -212,94 +212,98 @@ class _UniversityProfileState extends State<UniversityProfile> {
                                      ),
                                      const SizedBox(height: 10,),
 
-                                     Row(
-                                       children: [
-                                         Row(
-                                           children: [
-                                             Container(
-                                               width: 20,
-                                               height: 20,
-                                               decoration: const BoxDecoration(
+                                     Padding(
+                                       padding: const EdgeInsets.only(left: 5),
+                                       child: Row(
+                                         children: [
+                                           Row(
+                                             children: [
+                                               Container(
+                                                 width: 20,
+                                                 height: 20,
+                                                 decoration: const BoxDecoration(
+                                                     color: Colors.white,
+                                                     shape: BoxShape.circle
+                                                 ),
+                                                 child: const Icon(
+                                                   Icons.pentagon,
+                                                   size: 15,
+                                                   color: Color(0xFF5458F6),
+                                                 ),
+                                               ),
+                                               const Padding(
+                                                 padding: EdgeInsets.only(left: 5),
+                                                 child: Text(
+                                                   'Licence',
+                                                   style: TextStyle(
+                                                       fontSize: 12,
+                                                       fontWeight: FontWeight.w300
+                                                   ),
+                                                 ),
+                                               ),
+                                             ],
+                                           ),
+                                           const SizedBox(width: 10,),
+                                           Row(
+                                             children: [
+                                               Container(
+                                                 width: 20,
+                                                 height: 20,
+                                                 decoration: const BoxDecoration(
                                                    color: Colors.white,
-                                                   shape: BoxShape.circle
-                                               ),
-                                               child: const Icon(
-                                                 Icons.pentagon,
-                                                 size: 15,
-                                                 color: Color(0xFF5458F6),
-                                               ),
-                                             ),
-                                             const Padding(
-                                               padding: EdgeInsets.only(left: 5),
-                                               child: Text(
-                                                 'Licence',
-                                                 style: TextStyle(
-                                                     fontSize: 12,
-                                                     fontWeight: FontWeight.w300
+                                                   shape: BoxShape.circle,
+                                                 ),
+                                                 child: const Icon(
+                                                     Icons.pentagon,
+                                                     size: 15,
+                                                     color: Color(0xFF5458F6)
                                                  ),
                                                ),
-                                             ),
-                                           ],
-                                         ),
-                                         const SizedBox(width: 10,),
-                                         Row(
-                                           children: [
-                                             Container(
-                                               width: 20,
-                                               height: 20,
-                                               decoration: const BoxDecoration(
-                                                 color: Colors.white,
-                                                 shape: BoxShape.circle,
-                                               ),
-                                               child: const Icon(
-                                                   Icons.pentagon,
-                                                   size: 15,
-                                                   color: Color(0xFF5458F6)
-                                               ),
-                                             ),
-                                             const Padding(
-                                               padding: EdgeInsets.only(left: 5),
-                                               child: Text(
-                                                 'Master',
-                                                 style: TextStyle(
-                                                     fontSize: 12,
-                                                     fontWeight: FontWeight.w300
+                                               const Padding(
+                                                 padding: EdgeInsets.only(left: 5),
+                                                 child: Text(
+                                                   'Master',
+                                                   style: TextStyle(
+                                                       fontSize: 12,
+                                                       fontWeight: FontWeight.w300
+                                                   ),
                                                  ),
                                                ),
-                                             ),
-                                           ],
-                                         ),
-                                         const SizedBox(width: 10,),
-                                         Row(
-                                           children: [
-                                             Container(
-                                               width: 20,
-                                               height: 20,
-                                               decoration: const BoxDecoration(
-                                                 color: Colors.white,
-                                                 shape: BoxShape.circle,
-                                               ),
-                                               child: const Icon(
-                                                   Icons.pentagon,
-                                                   size: 15,
-                                                   color: Color(0xFF5458F6)
-                                               ),
-                                             ),
-                                             const Padding(
-                                               padding: EdgeInsets.only(left: 5),
-                                               child: Text(
-                                                 'Doctorat',
-                                                 style: TextStyle(
-                                                     fontSize: 12,
-                                                     fontWeight: FontWeight.w300
+                                             ],
+                                           ),
+                                           const SizedBox(width: 10,),
+                                           Row(
+                                             children: [
+                                               Container(
+                                                 width: 20,
+                                                 height: 20,
+                                                 decoration: const BoxDecoration(
+                                                   color: Colors.white,
+                                                   shape: BoxShape.circle,
+                                                 ),
+                                                 child: const Icon(
+                                                     Icons.pentagon,
+                                                     size: 15,
+                                                     color: Color(0xFF5458F6)
                                                  ),
                                                ),
-                                             ),
-                                           ],
-                                         ),
+                                               const Padding(
+                                                 padding: EdgeInsets.only(left: 5),
+                                                 child: Text(
+                                                   'Doctorat',
+                                                   style: TextStyle(
+                                                       fontSize: 12,
+                                                       fontWeight: FontWeight.w300
+                                                   ),
+                                                 ),
+                                               ),
+                                             ],
+                                           ),
 
-                                       ],
+                                         ],
+                                       ),
                                      ),
+
 
 
 
@@ -326,7 +330,7 @@ class _UniversityProfileState extends State<UniversityProfile> {
                                              child: const Center(
                                                child: Text('Médecine',
                                                style: TextStyle(
-                                                 color: Color(0xFFC4C4C4),
+                                                 color: Colors.black,
                                                    fontSize: 12
                                                ),),
                                              ),
@@ -343,7 +347,7 @@ class _UniversityProfileState extends State<UniversityProfile> {
                                              child: const Center(
                                                child: Text('Lettres',
                                                  style: TextStyle(
-                                                     color: Color(0xFFC4C4C4),
+                                                     color: Colors.black,
                                                    fontSize: 12
                                                  ),),
                                              ),
@@ -359,7 +363,7 @@ class _UniversityProfileState extends State<UniversityProfile> {
                                              child: const Center(
                                                child: Text('Polytechnique',
                                                  style: TextStyle(
-                                                     color: Color(0xFFC4C4C4),
+                                                     color: Colors.black,
                                                    fontSize: 12
                                                  ),),
                                              ),
@@ -386,7 +390,7 @@ class _UniversityProfileState extends State<UniversityProfile> {
                                              child: const Center(
                                                child: Text('Psychologie',
                                                  style: TextStyle(
-                                                     color: Color(0xFFC4C4C4),
+                                                     color: Colors.black,
                                                      fontSize: 12
                                                  ),),
                                              ),
@@ -403,7 +407,7 @@ class _UniversityProfileState extends State<UniversityProfile> {
                                              child: const Center(
                                                child: Text('Sciences',
                                                  style: TextStyle(
-                                                     color: Color(0xFFC4C4C4),
+                                                     color: Colors.black,
                                                      fontSize: 12
                                                  ),),
                                              ),
@@ -419,7 +423,7 @@ class _UniversityProfileState extends State<UniversityProfile> {
                                              child: const Center(
                                                child: Text('Economie',
                                                  style: TextStyle(
-                                                     color: Color(0xFFC4C4C4),
+                                                     color: Colors.black,
                                                      fontSize: 12
                                                  ),),
                                              ),
@@ -441,6 +445,22 @@ class _UniversityProfileState extends State<UniversityProfile> {
                                              fontWeight: FontWeight.w300
                                          ),),
                                      ),
+
+                                     const SizedBox(height: 20,),
+                                     Container(
+                                       width: 300,
+                                       height: 30,
+                                       color: const Color(0xFFF8FAFB),
+                                       child: const Padding(
+                                         padding:  EdgeInsets.all(4.0),
+                                         child:  Text(
+                                           'Faculté de Médecine',
+                                           style: TextStyle(
+                                             fontWeight: FontWeight.w300
+                                           ),
+                                         ),
+                                       ),
+                                     )
                                    ],
                                  ),
                                ),
