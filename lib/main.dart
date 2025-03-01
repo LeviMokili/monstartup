@@ -3,6 +3,7 @@ import 'package:startup/views/auth/login.dart';
 import 'package:startup/views/home.dart';
 import 'package:startup/views/schools/school_profile.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
