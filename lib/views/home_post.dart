@@ -99,12 +99,13 @@ class _HomePostState extends State<HomePost> {
                           },
                           child: const LikeButton(
                             size: 25,
+                            likeCount:45
                           )
                         ),
-                         const Padding(
-                           padding: EdgeInsets.only(bottom: 4),
-                           child: Text('243', style: TextStyle(fontSize: 12),),
-                         ),
+                         // const Padding(
+                         //   padding: EdgeInsets.only(bottom: 4),
+                         //   child: Text('243', style: TextStyle(fontSize: 12),),
+                         // ),
 
 
                          GestureDetector(
