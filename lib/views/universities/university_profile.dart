@@ -14,6 +14,7 @@ class _UniversityProfileState extends State<UniversityProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
 
         leading: Container(
@@ -143,7 +144,7 @@ class _UniversityProfileState extends State<UniversityProfile> {
 
                                      Padding(
                                        padding: const EdgeInsets.only(left: 20),
-                                       child: Column(
+                                       child: Row(
                                          children: [
                                           Row(
                                             children: [
@@ -172,8 +173,7 @@ class _UniversityProfileState extends State<UniversityProfile> {
                                               ),
                                             ],
                                           ),
-
-                                           const SizedBox(height: 10,),
+                                           const SizedBox(width: 10,),
                                            Row(
                                              children: [
                                                Container(
@@ -210,97 +210,97 @@ class _UniversityProfileState extends State<UniversityProfile> {
                                        padding:  EdgeInsets.only(right: 250),
                                        child:  Text('Niveaux'),
                                      ),
-                                     const SizedBox(height: 2,),
+                                     const SizedBox(height: 10,),
 
-                                     Padding(
-                                       padding: const EdgeInsets.only(left: 20),
-                                       child: Column(
-                                         children: [
-
-                                           Row(
-                                             children: [
-                                               Container(
-                                                 width: 20,
-                                                 height: 20,
-                                                 decoration: const BoxDecoration(
-                                                     color: Colors.white,
-                                                     shape: BoxShape.circle
+                                     Row(
+                                       children: [
+                                         Row(
+                                           children: [
+                                             Container(
+                                               width: 20,
+                                               height: 20,
+                                               decoration: const BoxDecoration(
+                                                   color: Colors.white,
+                                                   shape: BoxShape.circle
+                                               ),
+                                               child: const Icon(
+                                                 Icons.pentagon,
+                                                 size: 15,
+                                                 color: Color(0xFF5458F6),
+                                               ),
+                                             ),
+                                             const Padding(
+                                               padding: EdgeInsets.only(left: 5),
+                                               child: Text(
+                                                 'Licence',
+                                                 style: TextStyle(
+                                                     fontSize: 12,
+                                                     fontWeight: FontWeight.w300
                                                  ),
-                                                 child: const Icon(
+                                               ),
+                                             ),
+                                           ],
+                                         ),
+                                         const SizedBox(width: 10,),
+                                         Row(
+                                           children: [
+                                             Container(
+                                               width: 20,
+                                               height: 20,
+                                               decoration: const BoxDecoration(
+                                                 color: Colors.white,
+                                                 shape: BoxShape.circle,
+                                               ),
+                                               child: const Icon(
                                                    Icons.pentagon,
                                                    size: 15,
-                                                   color: Color(0xFF5458F6),
+                                                   color: Color(0xFF5458F6)
+                                               ),
+                                             ),
+                                             const Padding(
+                                               padding: EdgeInsets.only(left: 5),
+                                               child: Text(
+                                                 'Master',
+                                                 style: TextStyle(
+                                                     fontSize: 12,
+                                                     fontWeight: FontWeight.w300
                                                  ),
                                                ),
-                                               const Padding(
-                                                 padding: EdgeInsets.only(left: 5),
-                                                 child: Text(
-                                                   'Licence',
-                                                   style: TextStyle(
-                                                       fontSize: 12,
-                                                       fontWeight: FontWeight.w300
-                                                   ),
+                                             ),
+                                           ],
+                                         ),
+                                         const SizedBox(width: 10,),
+                                         Row(
+                                           children: [
+                                             Container(
+                                               width: 20,
+                                               height: 20,
+                                               decoration: const BoxDecoration(
+                                                 color: Colors.white,
+                                                 shape: BoxShape.circle,
+                                               ),
+                                               child: const Icon(
+                                                   Icons.pentagon,
+                                                   size: 15,
+                                                   color: Color(0xFF5458F6)
+                                               ),
+                                             ),
+                                             const Padding(
+                                               padding: EdgeInsets.only(left: 5),
+                                               child: Text(
+                                                 'Doctorat',
+                                                 style: TextStyle(
+                                                     fontSize: 12,
+                                                     fontWeight: FontWeight.w300
                                                  ),
                                                ),
-                                             ],
-                                           ),
-                                           Row(
-                                             children: [
-                                               Container(
-                                                 width: 20,
-                                                 height: 20,
-                                                 decoration: const BoxDecoration(
-                                                   color: Colors.white,
-                                                   shape: BoxShape.circle,
-                                                 ),
-                                                 child: const Icon(
-                                                     Icons.pentagon,
-                                                     size: 15,
-                                                     color: Color(0xFF5458F6)
-                                                 ),
-                                               ),
-                                               const Padding(
-                                                 padding: EdgeInsets.only(left: 5),
-                                                 child: Text(
-                                                   'Master',
-                                                   style: TextStyle(
-                                                       fontSize: 12,
-                                                       fontWeight: FontWeight.w300
-                                                   ),
-                                                 ),
-                                               ),
-                                             ],
-                                           ),
-                                           Row(
-                                             children: [
-                                               Container(
-                                                 width: 20,
-                                                 height: 20,
-                                                 decoration: const BoxDecoration(
-                                                   color: Colors.white,
-                                                   shape: BoxShape.circle,
-                                                 ),
-                                                 child: const Icon(
-                                                     Icons.pentagon,
-                                                     size: 15,
-                                                     color: Color(0xFF5458F6)
-                                                 ),
-                                               ),
-                                               const Padding(
-                                                 padding: EdgeInsets.only(left: 5),
-                                                 child: Text(
-                                                   'Doctorat',
-                                                   style: TextStyle(
-                                                       fontSize: 12,
-                                                       fontWeight: FontWeight.w300
-                                                   ),
-                                                 ),
-                                               ),
-                                             ],
-                                           ),
-                                         ],
-                                       ),
+                                             ),
+                                           ],
+                                         ),
+
+                                       ],
                                      ),
+
 
 
 

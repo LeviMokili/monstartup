@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:startup/views/auth/login.dart';
 import 'package:startup/views/home.dart';
 import 'package:startup/views/schools/school_profile.dart';
+import 'package:startup/views/universities/university_profile.dart';
 
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Home(),
+      home: const UniversityProfile(),
     );
   }
 }
