@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 import 'package:startup/views/schools/school_profile.dart';
+import 'package:startup/views/universities/university_profile.dart';
 class HomePost extends StatefulWidget {
   const HomePost({super.key});
 
@@ -25,7 +26,7 @@ class _HomePostState extends State<HomePost> {
                 children: [
                   GestureDetector(
                     onTap: (){
-                      Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=> const SchoolProfile()), (route) => false);
+                      Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=> const UniversityProfile()), (route) => false);
 
                     },
                     child: Row(
