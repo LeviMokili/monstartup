@@ -105,13 +105,13 @@ class _UniversityProfileState extends State<UniversityProfile> {
 
                                      const SizedBox(height: 20,),
 
-                                     Container(
+                                     const SizedBox(
                                        width: 100,
                                        height: 30,
-                                       color: const Color(0xFFE6F8EB),
-                                       child: const Center(
+                                       // color: const Color(0xFFE6F8EB),
+                                       child:  Center(
                                          child:  Text(
-                                             "#Université publique",
+                                             "##Université publique",
                                              style: TextStyle(
                                                fontWeight: FontWeight.w400,
                                                color: Color(0xFF2EC456),
@@ -123,23 +123,33 @@ class _UniversityProfileState extends State<UniversityProfile> {
                                      //
                                      const SizedBox(height: 20,),
 
-                                     const Row(
+                                     Row(
                                        children: [
                                          Padding(
-                                           padding: EdgeInsets.all(8.0),
-                                           child: Text('##', style: TextStyle(color: Color(0xFFF6426C)),),
+                                           padding: const EdgeInsets.all(8.0),
+                                           child: Container(
+                                             width: 22,
+                                             height: 22,
+                                             decoration: const BoxDecoration(
+                                               color: Colors.blue,
+                                               shape: BoxShape.circle
+                                             ),
+                                             child: const Center(
+                                               child: Icon(Icons.directions_rounded, size: 15,color: Colors.white,),
+                                             ),
+                                           ),
                                          ),
-                                         Expanded(child: Padding(
+                                         const Expanded(child: Padding(
                                            padding: EdgeInsets.only(top: 10),
                                            child: Text("Situé dans la commune de Limeté Qartier Mososo Devant le boulevard Lumumba.", style: TextStyle(fontWeight: FontWeight.w300,fontSize: 13),),
                                          )),
                                        ],
                                      ),
-                                     const SizedBox(height: 20,),
-                                     const Padding(
-                                       padding:  EdgeInsets.only(right: 250),
-                                       child:  Text('Contact'),
-                                     ),
+                                     // const SizedBox(height: 20,),
+                                     // const Padding(
+                                     //   padding:  EdgeInsets.only(right: 250),
+                                     //   child:  Text('Contact'),
+                                     // ),
                                      const SizedBox(height: 20,),
 
                                      Padding(
@@ -460,7 +470,152 @@ class _UniversityProfileState extends State<UniversityProfile> {
                                            ),
                                          ),
                                        ),
-                                     )
+                                     ),
+
+                                      const SizedBox(
+                                        child: Column(
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsets.all(8.0),
+                                                  child: Text('##', style: TextStyle(color: Color(0xFFF6426C)),),
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.only(top: 2),
+                                                  child: Text("Departement A /", style: TextStyle(fontWeight: FontWeight.w500,fontSize: 13),),
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.all(8.0),
+                                                  child: Text('Dure de 3 ans', style: TextStyle(color: Color(0xFFF6426C)),),
+                                                ),
+
+                                              ],
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsets.only(right: 30),
+                                              child: Text('Situé dans la commune de Limeté Qartier Mososo Devant le boulevard Lumumba Limeté Qartier Mososo Devant le boulevard Lumumba',
+                                              style: TextStyle(fontWeight: FontWeight.w300),),
+                                            )
+
+                                           
+                                          ],
+                                        ),
+                                      ),
+
+                                     const SizedBox(height: 10,),
+                                     const SizedBox(
+                                       child: Column(
+                                         children: [
+                                           Row(
+                                             children: [
+                                               Padding(
+                                                 padding: EdgeInsets.all(8.0),
+                                                 child: Text('##', style: TextStyle(color: Color(0xFFF6426C)),),
+                                               ),
+                                               Padding(
+                                                 padding: EdgeInsets.only(top: 2),
+                                                 child: Text("Departement B /", style: TextStyle(fontWeight: FontWeight.w500,fontSize: 13),),
+                                               ),
+                                               Padding(
+                                                 padding: EdgeInsets.all(8.0),
+                                                 child: Text('Dure de 6 ans', style: TextStyle(color: Color(0xFFF6426C)),),
+                                               ),
+
+                                             ],
+                                           ),
+                                           Padding(
+                                             padding: EdgeInsets.only(right: 30),
+                                             child: Text('Situé dans la commune de Limeté Qartier Mososo Devant le boulevard Lumumba Limeté Qartier Mososo Devant le boulevard Lumumba',
+                                               style: TextStyle(fontWeight: FontWeight.w300),),
+                                           )
+
+
+                                         ],
+                                       ),
+                                     ),
+
+                                     const SizedBox(height: 20,),
+                                     Container(
+                                       width: 300,
+                                       height: 30,
+                                       color: const Color(0xFFF8FAFB),
+                                       child: const Padding(
+                                         padding:  EdgeInsets.all(4.0),
+                                         child:  Text(
+                                           'Faculté de Lettres',
+                                           style: TextStyle(
+                                               fontWeight: FontWeight.w300
+                                           ),
+                                         ),
+                                       ),
+                                     ),
+
+                                     const SizedBox(
+                                       child: Column(
+                                         children: [
+                                           Row(
+                                             children: [
+                                               Padding(
+                                                 padding: EdgeInsets.all(8.0),
+                                                 child: Text('##', style: TextStyle(color: Color(0xFFF6426C)),),
+                                               ),
+                                               Padding(
+                                                 padding: EdgeInsets.only(top: 2),
+                                                 child: Text("Departement A /", style: TextStyle(fontWeight: FontWeight.w500,fontSize: 13),),
+                                               ),
+
+                                               Padding(
+                                                 padding: EdgeInsets.all(8.0),
+                                                 child: Text('Dure de 2 ans', style: TextStyle(color: Color(0xFFF6426C)),),
+                                               ),
+
+                                             ],
+                                           ),
+                                           Padding(
+                                             padding: EdgeInsets.only(right: 30),
+                                             child: Text('Situé dans la commune de Limeté Qartier Mososo Devant le boulevard Lumumba Limeté Qartier Mososo Devant le boulevard Lumumba',
+                                               style: TextStyle(fontWeight: FontWeight.w300),),
+                                           )
+
+
+                                         ],
+                                       ),
+                                     ),
+
+                                     const SizedBox(height: 10,),
+                                     const SizedBox(
+                                       child: Column(
+                                         children: [
+                                           Row(
+                                             children: [
+                                               Padding(
+                                                 padding: EdgeInsets.all(8.0),
+                                                 child: Text('##', style: TextStyle(color: Color(0xFFF6426C)),),
+                                               ),
+                                               Padding(
+                                                 padding: EdgeInsets.only(top: 2),
+                                                 child: Text("Departement B", style: TextStyle(fontWeight: FontWeight.w500,fontSize: 13),),
+                                               ),
+                                               Padding(
+                                                 padding: EdgeInsets.all(8.0),
+                                                 child: Text('Dure de 4 ans', style: TextStyle(color: Color(0xFFF6426C)),),
+                                               ),
+
+                                             ],
+                                           ),
+                                           Padding(
+                                             padding: EdgeInsets.only(right: 30),
+                                             child: Text('Situé dans la commune de Limeté Qartier Mososo Devant le boulevard Lumumba Limeté Qartier Mososo Devant le boulevard Lumumba',
+                                               style: TextStyle(fontWeight: FontWeight.w300),),
+                                           )
+
+
+                                         ],
+                                       ),
+                                     ),
+
+
                                    ],
                                  ),
                                ),

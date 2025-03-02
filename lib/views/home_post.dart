@@ -26,6 +26,7 @@ class _HomePostState extends State<HomePost> {
                 children: [
                   GestureDetector(
                     onTap: (){
+
                       Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=> const UniversityProfile()), (route) => false);
 
                     },
@@ -39,8 +40,15 @@ class _HomePostState extends State<HomePost> {
                             height: 40,
                             decoration: const BoxDecoration(
                               color: Colors.blueGrey,
-                              shape: BoxShape.circle
+                              shape: BoxShape.circle,
+
                             ),
+                            // child: Image.asset(
+                            //   'assets/logo.png', // Replace with your image path
+                            //   width: double.infinity,
+                            //   height: 300, // Adjust height for better spacing
+                            //   fit: BoxFit.cover,
+                            // ),
 
                           ),
                         ),
@@ -86,6 +94,12 @@ class _HomePostState extends State<HomePost> {
                     height: 330,
                     width: double.infinity,
                     color: Colors.blueGrey,
+                    child: Image.asset(
+                      'assets/homeposts/post.jpg', // Replace with your image path
+                      width: double.infinity,
+                      height: 300, // Adjust height for better spacing
+                      fit: BoxFit.cover,
+                    ),
 
                   ),
                   const SizedBox(height: 10,),
@@ -108,23 +122,115 @@ class _HomePostState extends State<HomePost> {
                          // ),
 
 
-                         GestureDetector(
-                           onTap: ()=> print('okay'),
-                           child: Padding(
-                             padding: const EdgeInsets.only(left: 20,bottom: 3),
-                             child: SizedBox(
-                               height: 20,
-                                 width: 20,
-                                 child: Image.asset('assets/comment_icon.png')
-                             ),
-                           ),
-                         ) ,
+                        GestureDetector(
+                          onTap: () => showModalBottomSheet(
+                            backgroundColor: Colors.white,
+                            isScrollControlled: true,
+                            context: context,
+                            builder: (BuildContext context) {
+                              return SizedBox(
+                                height: MediaQuery.of(context).size.height * 0.9, // 90% of screen height
+                                width: double.infinity,
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Expanded(
+                                      child: ListView(
+                                        padding: const EdgeInsets.all(10),
+                                        children: [
+                                          const SizedBox(height: 10),
+                                          Row(
+                                            children: [
+                                              const Padding(
+                                                padding: EdgeInsets.only(left: 100),
+                                                child: Text(
+                                                  "Commentaires",
+                                                  style: TextStyle(fontWeight: FontWeight.w300, fontSize: 20),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsets.only(left: 50),
+                                                child: IconButton(
+                                                  onPressed: () {
+                                                    Navigator.pop(context);
+                                                  },
+                                                  icon: const Icon(
+                                                    Icons.close,
+                                                    size: 15,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          // Comment section
 
 
-                          const Padding(
-                            padding: EdgeInsets.all(4.0),
-                            child: Text('56', style: TextStyle(fontSize: 12),),
+                                          Row(
+                                            children: [
+                                              Container(
+                                                width: 40,
+                                                height: 40,
+                                                decoration: const BoxDecoration(
+                                                  color: Colors.blueGrey,
+                                                  shape: BoxShape.circle,
+                                                ),
+                                              ),
+                                              const SizedBox(width: 10), // Added spacing
+                                              const Expanded( // Ensures text does not overflow
+                                                child: Column(
+                                                  crossAxisAlignment: CrossAxisAlignment.start, // Align text to left
+                                                  children: [
+                                                    Padding(
+                                                      padding: EdgeInsets.only(top: 30),
+                                                      child: Row(
+                                                        children: [
+                                                          Text('levimokili' ,style: TextStyle(
+                                                            fontWeight: FontWeight.w400
+                                                          ),),
+                                                          SizedBox(width: 30,),
+                                                          Text('il y a 4 jours', style: TextStyle(
+                                                            color: Color(0xFF444444),
+                                                            fontSize: 10,
+                                                            fontWeight: FontWeight.w300
+                                                          ),),
+                                                        ],
+                                                      ),
+                                                    ),
+
+                                                    Text(
+                                                      "I lobve it even more without the baby hair Let’s start that trend. Frontal lace wigs, zero bady hairee, more natural looking! I’m here for it.",
+                                                      overflow: TextOverflow.ellipsis, // Prevents overflow
+                                                      maxLines: 20,
+                                                      style: TextStyle(
+                                                          fontWeight: FontWeight.w300,
+                                                          fontSize: 12
+                                                      ),
+                                                    )
+
+
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
                           ),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 20, bottom: 3),
+                            child: SizedBox(
+                              height: 20,
+                              width: 20,
+                              child: Image.asset('assets/comment_icon.png'),
+                            ),
+                          ),
+                        )
+
 
 
                       ],

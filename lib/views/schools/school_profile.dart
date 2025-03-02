@@ -64,136 +64,557 @@ class _SchoolProfileState extends State<SchoolProfile> {
             ),
 
             child: IconButton(
-                onPressed: (){
-                  showModalBottomSheet(
-                      isScrollControlled: true,
-                      context: context, builder: (BuildContext contex){
-                        return SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.9, // 90% of screen height
-                          width: double.infinity,
-                          child:  Column(
-                            mainAxisSize: MainAxisSize.min,
+              onPressed: (){
+                showModalBottomSheet(
+                    backgroundColor: Colors.white,
+                    isScrollControlled: true,
+                    context: context, builder: (BuildContext contex){
+                  return SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.9, // 90% of screen height
+                    width: double.infinity,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children:[
+                        Expanded(
+                          child: ListView(
+                            padding: const EdgeInsets.all(10),
                             children: [
+                              const SizedBox(height: 10,),
+                              Row(
+                                children: [
+                                  const Padding(
+                                    padding:  EdgeInsets.only(left: 20),
+                                    child:  Text("Informations supplémentaires",
+                                      style: TextStyle(fontWeight: FontWeight.w300, fontSize: 20),
+                                    ),
+                                  ),
+
+                                  IconButton(
+                                    onPressed: (){
+                                      Navigator.pop(context);
+                                    },
+                                    icon: const Icon(
+                                      Icons.close,
+                                      size: 15,
+                                    ),
+                                  ),
+                                ],
+                              ),
+
+
                               const SizedBox(height: 20,),
-                               const Text("Informations suplementaire", style: TextStyle(fontWeight: FontWeight.w300,fontSize: 20),),
+
+                             const SizedBox(
+                                width: 100,
+                                height: 30,
+                                // color: const Color(0xFFE6F8EB),
+                                child:  Center(
+                                  child:  Text(
+                                    "##Ecole Conventionnée Catholique",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        color: Color(0xFF2EC456),
+                                        fontSize: 12
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              //
                               const SizedBox(height: 20,),
 
                               Row(
                                 children: [
-                                  Container(
-                                    margin: const EdgeInsets.all(6.0),
-                                    width: 10,
-                                    height: 10,
-                                    decoration: const BoxDecoration(
-                                        color: Color(0xFF7779F8),
-                                        shape: BoxShape.circle
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      width: 22,
+                                      height: 22,
+                                      decoration: const BoxDecoration(
+                                          color: Colors.blue,
+                                          shape: BoxShape.circle
+                                      ),
+                                      child: const Center(
+                                        child: Icon(Icons.directions_rounded, size: 15,color: Colors.white,),
+                                      ),
                                     ),
                                   ),
-                                  const Text('Ecole Conventionnée Catholique'),
-
-                                ]
-                              ),
-
-
-                              const Row(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text('##', style: TextStyle(color: Color(0xFFF6426C)),),
-                                  ),
-                                  Expanded(child: Padding(
+                                  const Expanded(child: Padding(
                                     padding: EdgeInsets.only(top: 10),
                                     child: Text("Situé dans la commune de Limeté Qartier Mososo Devant le boulevard Lumumba.", style: TextStyle(fontWeight: FontWeight.w300,fontSize: 13),),
                                   )),
                                 ],
                               ),
+                              // const SizedBox(height: 20,),
+                              // const Padding(
+                              //   padding:  EdgeInsets.only(right: 250),
+                              //   child:  Text('Contact'),
+                              // ),
                               const SizedBox(height: 30,),
 
-
-
-                              const Padding(
-                                padding: EdgeInsets.only(right: 120),
-                                child: Text('Modalité de payement :',style: TextStyle(fontSize: 17, fontWeight: FontWeight.w300),),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 5),
+                                child: Row(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Container(
+                                          width: 35,
+                                          height: 35,
+                                          decoration: const BoxDecoration(
+                                              color: Color(0xFFFFEDF1),
+                                              shape: BoxShape.circle
+                                          ),
+                                          child: const Icon(
+                                            Icons.mail,
+                                            size: 15,
+                                            color: Color(0xFFF6426C),
+                                          ),
+                                        ),
+                                        const Padding(
+                                          padding: EdgeInsets.only(left: 5),
+                                          child: Text(
+                                            'levimp8d@gmail.com',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w300
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(width: 10,),
+                                    Row(
+                                      children: [
+                                        Container(
+                                          width: 35,
+                                          height: 35,
+                                          decoration: const BoxDecoration(
+                                            color: Color(0xFFE6F8EB),
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: const Icon(
+                                              Icons.mail,
+                                              size: 15,
+                                              color: Color(0xFF2EC456)
+                                          ),
+                                        ),
+                                        const Padding(
+                                          padding: EdgeInsets.only(left: 5),
+                                          child: Text(
+                                            '+243 973468606',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w300
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
-
-                              const SizedBox(height: 10,),
-                              const Padding(
-                                padding: EdgeInsets.only(right: 240),
-                                child: Text('#Martenel'),
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.only(left: 40),
-                                child: Text('Inspirational designs, illustrations, and graphic elements from the world’s best designers.Want more inspiration? Browse our 300 dollars', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w300),),
-                              ),
-
-                              const SizedBox(height: 5,),
-
-                              const Padding(
-                                padding: EdgeInsets.only(right: 240),
-                                child: Text('#Primière'),
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.only(left: 40),
-                                child: Text('Inspirational designs, illustrations, and graphic elements from the world’s best designers.Want more inspiration? Browse our 300 dollars', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w300),),
-                              ),
-
-                              const SizedBox(height: 5,),
-
-                              const Padding(
-                                padding: EdgeInsets.only(right: 220),
-                                child: Text('#Secondaire'),
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.only(left: 40),
-                                child: Text('Inspirational designs, illustrations, and graphic elements from the world’s best designers.Want more inspiration? Browse our 300 dollars', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w300),),
-                              ),
-
-
-
-
-
-                              //SECTION DISPONIBLE
 
                               const SizedBox(height: 20,),
                               const Padding(
-                                padding: EdgeInsets.only(right: 110),
-                                child: Text('Programmes disponible :',style: TextStyle(fontSize: 17, fontWeight: FontWeight.w300),),
+                                padding:  EdgeInsets.only(right: 250),
+                                child:  Text('Niveaux'),
+                              ),
+                              const SizedBox(height: 10,),
+
+                              Padding(
+                                padding: const EdgeInsets.only(left: 5),
+                                child: Row(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Container(
+                                          width: 20,
+                                          height: 20,
+                                          decoration: const BoxDecoration(
+                                              color: Colors.white,
+                                              shape: BoxShape.circle
+                                          ),
+                                          child: const Icon(
+                                            Icons.pentagon,
+                                            size: 15,
+                                            color: Color(0xFF5458F6),
+                                          ),
+                                        ),
+                                        const Padding(
+                                          padding: EdgeInsets.only(left: 5),
+                                          child: Text(
+                                            'Maternel',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w300
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(width: 10,),
+                                    Row(
+                                      children: [
+                                        Container(
+                                          width: 20,
+                                          height: 20,
+                                          decoration: const BoxDecoration(
+                                            color: Colors.white,
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: const Icon(
+                                              Icons.pentagon,
+                                              size: 15,
+                                              color: Color(0xFF5458F6)
+                                          ),
+                                        ),
+                                        const Padding(
+                                          padding: EdgeInsets.only(left: 5),
+                                          child: Text(
+                                            'Primaire',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w300
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(width: 10,),
+                                    Row(
+                                      children: [
+                                        Container(
+                                          width: 20,
+                                          height: 20,
+                                          decoration: const BoxDecoration(
+                                            color: Colors.white,
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: const Icon(
+                                              Icons.pentagon,
+                                              size: 15,
+                                              color: Color(0xFF5458F6)
+                                          ),
+                                        ),
+                                        const Padding(
+                                          padding: EdgeInsets.only(left: 5),
+                                          child: Text(
+                                            'Secondaire',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w300
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+
+                                  ],
+                                ),
                               ),
 
-                              const Padding(
-                                padding: EdgeInsets.only(right: 220),
-                                child: Text('#Literaire'),
+
+
+
+
+                              const SizedBox(height: 30,),
+
+                              const Center(
+                                child: Text('Programmes disponible',
+                                  style: TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w300
+                                  ),),
+                              ),
+                              const SizedBox(height: 10,),
+
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 2),
+                                    child: Container(
+                                      width: 100,
+                                      height: 30,
+                                      color: const Color(0xFFF8FAFB),
+                                      child: const Center(
+                                        child: Text('Science',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 12
+                                          ),),
+                                      ),
+
+                                    ),
+                                  ),
+
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 2),
+                                    child: Container(
+                                      width: 100,
+                                      height: 30,
+                                      color: const Color(0xFFF8FAFB),
+                                      child: const Center(
+                                        child: Text('Math Physique',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 12
+                                          ),),
+                                      ),
+
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 2),
+                                    child: Container(
+                                      width: 100,
+                                      height: 30,
+                                      color: const Color(0xFFF8FAFB),
+                                      child: const Center(
+                                        child: Text('Cout et Couture',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 12
+                                          ),),
+                                      ),
+
+                                    ),
+                                  ),
+
+
+
+
+                                ],
+                              ),
+                              const SizedBox(height: 10,),
+
+
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 2),
+                                    child: Container(
+                                      width: 100,
+                                      height: 30,
+                                      color: const Color(0xFFF8FAFB),
+                                      child: const Center(
+                                        child: Text('Literaire',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 12
+                                          ),),
+                                      ),
+
+                                    ),
+                                  ),
+
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 2),
+                                    child: Container(
+                                      width: 100,
+                                      height: 30,
+                                      color: const Color(0xFFF8FAFB),
+                                      child: const Center(
+                                        child: Text('Macanique',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 12
+                                          ),),
+                                      ),
+
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 2),
+                                    child: Container(
+                                      width: 100,
+                                      height: 30,
+                                      color: const Color(0xFFF8FAFB),
+                                      child: const Center(
+                                        child: Text('Sociale',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 12
+                                          ),),
+                                      ),
+
+                                    ),
+                                  ),
+
+
+
+
+                                ],
+                              ),
+                              const SizedBox(height: 30,),
+
+                              const Center(
+                                child: Text('Frais Scolaire',
+                                  style: TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w300
+                                  ),),
                               ),
 
-                              const Padding(
-                                padding: EdgeInsets.only(right: 200),
-                                child: Text('#Mecanique'),
+                              const SizedBox(height: 20,),
+                              Container(
+                                width: 300,
+                                height: 30,
+                                color: const Color(0xFFF8FAFB),
+                                child: const Padding(
+                                  padding:  EdgeInsets.all(4.0),
+                                  child:  Text(
+                                    'Science',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w300
+                                    ),
+                                  ),
+                                ),
                               ),
 
-                              const Padding(
-                                padding: EdgeInsets.only(right: 160),
-                                child: Text('#Coupe et couture'),
+                              const SizedBox(
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('##', style: TextStyle(color: Color(0xFFF6426C)),),
+                                        ),
+
+
+
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(right: 30),
+                                      child: Text('Situé dans la commune de Limeté Qartier Mososo Devant le boulevard Lumumba Limeté Qartier Mososo Devant le boulevard Lumumba',
+                                        style: TextStyle(fontWeight: FontWeight.w300),),
+                                    )
+
+
+                                  ],
+                                ),
                               ),
 
-                              const Padding(
-                                padding: EdgeInsets.only(right: 220),
-                                child: Text('#Science'),
+                              const SizedBox(height: 10,),
+                              const SizedBox(
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('##', style: TextStyle(color: Color(0xFFF6426C)),),
+                                        ),
+
+
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(right: 30),
+                                      child: Text('Situé dans la commune de Limeté Qartier Mososo Devant le boulevard Lumumba Limeté Qartier Mososo Devant le boulevard Lumumba',
+                                        style: TextStyle(fontWeight: FontWeight.w300),),
+                                    )
+
+
+                                  ],
+                                ),
                               ),
 
-                              const Padding(
-                                padding: EdgeInsets.only(right: 205),
-                                child: Text('#Pedagogie'),
+                              const SizedBox(height: 20,),
+                              Container(
+                                width: 300,
+                                height: 30,
+                                color: const Color(0xFFF8FAFB),
+                                child: const Padding(
+                                  padding:  EdgeInsets.all(4.0),
+                                  child:  Text(
+                                    'Faculté de Lettres',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w300
+                                    ),
+                                  ),
+                                ),
                               ),
+
+                              const SizedBox(
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('##', style: TextStyle(color: Color(0xFFF6426C)),),
+                                        ),
+
+
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(right: 30),
+                                      child: Text('Situé dans la commune de Limeté Qartier Mososo Devant le boulevard Lumumba Limeté Qartier Mososo Devant le boulevard Lumumba',
+                                        style: TextStyle(fontWeight: FontWeight.w300),),
+                                    )
+
+
+                                  ],
+                                ),
+                              ),
+
+                              const SizedBox(height: 10,),
+                              const SizedBox(
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('##', style: TextStyle(color: Color(0xFFF6426C)),),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(top: 2),
+                                          child: Text("Departement B", style: TextStyle(fontWeight: FontWeight.w500,fontSize: 13),),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text('Dure de 4 ans', style: TextStyle(color: Color(0xFFF6426C)),),
+                                        ),
+
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(right: 30),
+                                      child: Text('Situé dans la commune de Limeté Qartier Mososo Devant le boulevard Lumumba Limeté Qartier Mososo Devant le boulevard Lumumba',
+                                        style: TextStyle(fontWeight: FontWeight.w300),),
+                                    )
+
+
+                                  ],
+                                ),
+                              ),
+
 
                             ],
                           ),
+                        ),
 
-                        );
 
 
-                  }
+
+
+
+
+
+
+
+                      ],
+                    ),
                   );
-                }, icon: const Icon(Icons.remove_red_eye,size: 16,color: Color(0xFFF6426C),),
+
+
+                }
+                );
+              }, icon: const Icon(Icons.remove_red_eye,size: 16,color: Color(0xFFF6426C),),
 
             ),
           ),
