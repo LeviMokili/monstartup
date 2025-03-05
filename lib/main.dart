@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:startup/views/auth/login.dart';
 import 'package:startup/views/home.dart';
 import 'package:startup/views/schools/school_profile.dart';
-import 'package:startup/views/universities/university_profile.dart';
+import 'package:startup/views/universities/second_page.dart';
 
 
 void main() {

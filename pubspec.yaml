@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   icons_launcher: ^3.0.0
   like_button: ^2.0.5
+  http: ^1.3.0
 
 
 
@@ -82,6 +83,7 @@ flutter:
    - assets/homeposts/post.jpg
    - assets/comment_icon.png
    - assets/homeposts/back_to_school.png
+   - assets/homeposts/newphoto.jpg
   #   - images/a_dot_ham.jpeg
 
 
