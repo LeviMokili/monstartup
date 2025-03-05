@@ -13,6 +13,7 @@ class Post {
   final String acronyme;
   final String province;
   final String ville;
+  final List<Faculty> faculties;
 
   Post({
     required this.id,
@@ -27,11 +28,14 @@ class Post {
     required this.acronyme,
     required this.province,
     required this.ville,
-
-
+    required this.faculties,
   });
 
   factory Post.fromJson(Map<String, dynamic> json) {
+
+    if (json['faculties'] == null) {
+      throw ArgumentError('Faculties cannot be null');
+    }
     return Post(
       id: json['id'],
       nom: json['nom'],
@@ -45,12 +49,33 @@ class Post {
       acronyme: json['acronyme'],
       province: json['province'],
       ville: json['ville'],
-
-
+      faculties: (json['faculties'] as List<dynamic>)
+          .map((e) => Faculty.fromJson(e))
+          .toList(),
     );
   }
 
   static List<Post> fromJsonList(List<dynamic> jsonList) {
     return jsonList.map((json) => Post.fromJson(json)).toList();
+  }
+}
+
+class Faculty {
+  final int id;
+  final int universityId;
+  final String nom;
+
+  Faculty({
+    required this.id,
+    required this.universityId,
+    required this.nom,
+  });
+
+  factory Faculty.fromJson(Map<String, dynamic> json) {
+    return Faculty(
+      id: json['id'],
+      universityId: json['university_id'],
+      nom: json['nom'],
+    );
   }
 }

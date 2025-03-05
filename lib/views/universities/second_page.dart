@@ -109,14 +109,14 @@ class SecondPage extends StatelessWidget {
 
                                 const SizedBox(height: 20,),
 
-                                const SizedBox(
+                                SizedBox(
                                   width: 100,
                                   height: 30,
                                   // color: const Color(0xFFE6F8EB),
                                   child:  Center(
                                     child:  Text(
-                                      "##Université publique",
-                                      style: TextStyle(
+                                      university.typeEtablissement,
+                                      style: const TextStyle(
                                           fontWeight: FontWeight.w400,
                                           color: Color(0xFF2EC456),
                                           fontSize: 12
@@ -143,9 +143,9 @@ class SecondPage extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                    const Expanded(child: Padding(
-                                      padding: EdgeInsets.only(top: 10),
-                                      child: Text("Situé dans la commune de Limeté Qartier Mososo Devant le boulevard Lumumba.", style: TextStyle(fontWeight: FontWeight.w300,fontSize: 13),),
+                                    Expanded(child: Padding(
+                                      padding: const EdgeInsets.only(top: 10),
+                                      child: Text(university.adresse, style: const TextStyle(fontWeight: FontWeight.w300,fontSize: 13),),
                                     )),
                                   ],
                                 ),
@@ -158,7 +158,7 @@ class SecondPage extends StatelessWidget {
 
                                 Padding(
                                   padding: const EdgeInsets.only(left: 5),
-                                  child: Row(
+                                  child: Column(
                                     children: [
                                       Row(
                                         children: [
@@ -175,11 +175,11 @@ class SecondPage extends StatelessWidget {
                                               color: Color(0xFFF6426C),
                                             ),
                                           ),
-                                          const Padding(
-                                            padding: EdgeInsets.only(left: 5),
+                                           Padding(
+                                            padding: const EdgeInsets.only(left: 5),
                                             child: Text(
-                                              'levimp8d@gmail.com',
-                                              style: TextStyle(
+                                              university.email,
+                                              style: const TextStyle(
                                                   fontSize: 12,
                                                   fontWeight: FontWeight.w300
                                               ),
@@ -187,7 +187,7 @@ class SecondPage extends StatelessWidget {
                                           ),
                                         ],
                                       ),
-                                      const SizedBox(width: 10,),
+                                      const SizedBox(height: 10,),
                                       Row(
                                         children: [
                                           Container(
@@ -203,10 +203,10 @@ class SecondPage extends StatelessWidget {
                                                 color: Color(0xFF2EC456)
                                             ),
                                           ),
-                                          const Padding(
+                                           Padding(
                                             padding: EdgeInsets.only(left: 5),
                                             child: Text(
-                                              '+243 973468606',
+                                              university.telephone,
                                               style: TextStyle(
                                                   fontSize: 12,
                                                   fontWeight: FontWeight.w300
@@ -332,125 +332,15 @@ class SecondPage extends StatelessWidget {
                                     ),),
                                 ),
                                 const SizedBox(height: 10,),
-
-                                Row(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 2),
-                                      child: Container(
-                                        width: 100,
-                                        height: 30,
-                                        color: const Color(0xFFF8FAFB),
-                                        child: const Center(
-                                          child: Text('Médecine',
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 12
-                                            ),),
-                                        ),
-
-                                      ),
-                                    ),
-
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 2),
-                                      child: Container(
-                                        width: 100,
-                                        height: 30,
-                                        color: const Color(0xFFF8FAFB),
-                                        child: const Center(
-                                          child: Text('Lettres',
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 12
-                                            ),),
-                                        ),
-
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 2),
-                                      child: Container(
-                                        width: 100,
-                                        height: 30,
-                                        color: const Color(0xFFF8FAFB),
-                                        child: const Center(
-                                          child: Text('Polytechnique',
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 12
-                                            ),),
-                                        ),
-
-                                      ),
-                                    ),
-
-
-
-
-                                  ],
+                                ListView.builder(
+                                  itemCount: university.faculties.length,
+                                  itemBuilder: (BuildContext context, int index) {
+                                    return const Text('data');
+                                  },
                                 ),
-                                const SizedBox(height: 10,),
 
-
-                                Row(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 2),
-                                      child: Container(
-                                        width: 100,
-                                        height: 30,
-                                        color: const Color(0xFFF8FAFB),
-                                        child: const Center(
-                                          child: Text('Psychologie',
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 12
-                                            ),),
-                                        ),
-
-                                      ),
-                                    ),
-
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 2),
-                                      child: Container(
-                                        width: 100,
-                                        height: 30,
-                                        color: const Color(0xFFF8FAFB),
-                                        child: const Center(
-                                          child: Text('Sciences',
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 12
-                                            ),),
-                                        ),
-
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 2),
-                                      child: Container(
-                                        width: 100,
-                                        height: 30,
-                                        color: const Color(0xFFF8FAFB),
-                                        child: const Center(
-                                          child: Text('Economie',
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 12
-                                            ),),
-                                        ),
-
-                                      ),
-                                    ),
-
-
-
-
-                                  ],
-                                ),
                                 const SizedBox(height: 30,),
+
 
                                 const Center(
                                   child: Text('Frais Academique',
@@ -661,6 +551,7 @@ class SecondPage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10,),
+
           const UniversityPost()
 
         ],
