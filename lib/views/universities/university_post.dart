@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+
+import '../../models/home_post.dart';
 class UniversityPost extends StatefulWidget {
-  const UniversityPost({super.key});
+  final Post university;
+  const UniversityPost({super.key, required this.university});
 
   @override
   State<UniversityPost> createState() => _UniversityPostState();
@@ -11,8 +14,9 @@ class _UniversityPostState extends State<UniversityPost> {
   Widget build(BuildContext context) {
     return  Expanded(
       child: ListView.builder(
-        itemCount: 10,
+        itemCount: widget.university.unimages.length,
         itemBuilder: (context, index) {
+          final unimage = widget.university.unimages[index];
           return Container(
             margin: const EdgeInsets.symmetric(vertical: 3, horizontal: 3),
             child: Stack(
@@ -23,12 +27,10 @@ class _UniversityPostState extends State<UniversityPost> {
                     width: double.infinity,
                     height: 400,
                     color: Colors.blueGrey,
-                    // child: Image.asset(
-                    //   'assets/homeposts/post.jpg', // Replace with your image path
-                    //   width: double.infinity,
-                    //   height: 300, // Adjust height for better spacing
-                    //   fit: BoxFit.cover,
-                    // ),
+                    child: Image.network(
+                      "http://172.16.111.15:8000/images/universityposts/${unimage.image}",
+                      fit: BoxFit.cover,
+                    ),
                   ),
 
                 ),

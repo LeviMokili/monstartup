@@ -14,6 +14,7 @@ class Post {
   final String province;
   final String ville;
   final List<Faculty> faculties;
+  final List<Unimage> unimages;
 
   Post({
     required this.id,
@@ -29,6 +30,7 @@ class Post {
     required this.province,
     required this.ville,
     required this.faculties,
+    required this.unimages,
   });
 
   factory Post.fromJson(Map<String, dynamic> json) {
@@ -51,6 +53,9 @@ class Post {
       ville: json['ville'],
       faculties: (json['faculties'] as List<dynamic>)
           .map((e) => Faculty.fromJson(e))
+          .toList(),
+      unimages: (json['unimages'] as List<dynamic>) // Parsing unimages
+          .map((e) => Unimage.fromJson(e))
           .toList(),
     );
   }
@@ -79,3 +84,25 @@ class Faculty {
     );
   }
 }
+
+
+class Unimage {
+  final int id;
+  final int universityId;
+  final String image;
+
+  Unimage({
+    required this.id,
+    required this.universityId,
+    required this.image,
+  });
+
+  factory Unimage.fromJson(Map<String, dynamic> json) {
+    return Unimage(
+      id: json['id'],
+      universityId: json['university_id'],
+      image: json['image'],
+    );
+  }
+}
+
