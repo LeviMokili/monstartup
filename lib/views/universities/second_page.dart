@@ -23,7 +23,7 @@ class SecondPage extends StatelessWidget {
           child: CircleAvatar(
             radius: 50,
             backgroundImage: NetworkImage(
-                "http://172.16.111.15:8000/images/${university.image}"),
+                "http://172.16.113.204:8000/images/${university.image}"),
           ),
         ),
         title: Column(
@@ -144,7 +144,7 @@ class SecondPage extends StatelessWidget {
                                         )),
                                       ],
                                     ),
-                                    const SizedBox(height: 20,),
+                                    const SizedBox(height: 10,),
 
                                     Padding(
                                       padding: const EdgeInsets.only(left: 5),
@@ -309,7 +309,7 @@ class SecondPage extends StatelessWidget {
                                       ),
                                     ),
 
-                                    const SizedBox(height: 10,),
+                                    const SizedBox(height: 50,),
 
                                     //FACULTIES
                                     const Center(
@@ -319,12 +319,13 @@ class SecondPage extends StatelessWidget {
                                             fontWeight: FontWeight.w300
                                         ),),
                                     ),
+                                   const SizedBox(height: 15,),
                                     SizedBox(
-                                      height: 100,
+                                      height: 150,
                                       child: GridView.builder(
                                         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                                           crossAxisCount: 3, // 3 columns
-                                          childAspectRatio: 3, // Adjust aspect ratio
+                                          childAspectRatio: 2, // Adjust aspect ratio
                                           crossAxisSpacing: 10,
                                           mainAxisSpacing: 10,
 
@@ -337,15 +338,80 @@ class SecondPage extends StatelessWidget {
                                             child: Padding(
                                               padding: const EdgeInsets.all(10.0),
                                               child: Center(
-                                                child: Text(faculty.nom,
-                                                  style: TextStyle(fontSize: 12),
+                                                child: Text(faculty.nom,maxLines: 3,
+                                                  style: const TextStyle(fontSize: 12, ),
                                                   ),
                                               ),
                                             ),
                                           );
                                         },
                                       ),
-                                    )
+                                    ),
+
+                                    const Center(
+                                      child: Text('Modalité de paiement',
+                                        style: TextStyle(
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.w300
+                                        ),),
+                                    ),
+
+                                    const SizedBox(height: 15,),
+                                    SizedBox(
+                                      height: 150,
+                                      child: GridView.builder(
+                                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                                          crossAxisCount: 1, // 3 columns
+                                          childAspectRatio: 4, // Adjust aspect ratio
+                                          crossAxisSpacing: 5,
+                                          mainAxisSpacing: 10,
+
+                                        ),
+                                        itemCount: university.departements.length,
+                                        itemBuilder: (BuildContext context, int index) {
+                                          final departement = university.departements[index]; // Access each faculty
+
+                                          return Container(
+                                            color: const Color(0xFFFFEDF1),
+                                            child: Column(
+                                              children: [
+                                                 Padding(
+                                                  padding:  const EdgeInsets.all(8.0),
+                                                  child:  Row(
+                                                    children: [
+                                                      Text('Faculté /${departement.facultyName}',maxLines: 3,
+                                                        style:  const TextStyle(fontSize: 12, ),
+                                                      ),
+                                                      const SizedBox(width: 10,),
+                                                    Text(departement.nom,maxLines: 3,
+                                                       style:  const TextStyle(fontSize: 12, fontWeight: FontWeight.w300 ),
+                                                      ),
+                                                      const SizedBox(width: 10,),
+                                                      Text(departement.duree, style: const TextStyle(
+                                                        fontSize: 10,
+                                                        fontWeight: FontWeight.w300,
+                                                        color: Colors.red
+                                                      ),),
+
+                                                    ],
+                                                  ),
+                                                ),
+                                                 Flexible(child: Padding(
+                                                   padding: const EdgeInsets.all(8.0),
+                                                   child: Text(departement.description,
+                                                     maxLines: 2,
+                                                     overflow: TextOverflow.visible, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+                                                   ),
+                                                 ))
+
+                                              ],
+                                            ),
+
+                                          );
+                                        },
+                                      ),
+                                    ),
+
 
                                   ],
                                 ),

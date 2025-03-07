@@ -76,14 +76,14 @@ class _HomePostState extends State<HomePost> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsets.all(2), // Space for border effect
+                                      padding: const EdgeInsets.all(2), // Space for border effect
                                       child: Container(
                                         decoration: BoxDecoration(
                                           shape: BoxShape.circle,
                                           border: Border.all(color: Colors.white, width: 0),
                                           image: DecorationImage(
                                             image: NetworkImage(
-                                                "http://172.16.111.15:8000/images/${post.image}"), // Replace with actual image URL
+                                                "http://172.16.113.204:8000/images/${post.image}"), // Replace with actual image URL
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -168,7 +168,7 @@ class _HomePostState extends State<HomePost> {
                             width: double.infinity,
                             color: Colors.blueGrey,
                             child: Image.network(
-                                "http://172.16.111.15:8000/images/${post.imageCover}",
+                                "http://172.16.113.204:8000/images/${post.imageCover}",
                               fit: BoxFit.cover,
                             ),
                             // child: Image.asset(

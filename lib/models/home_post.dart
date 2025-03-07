@@ -15,6 +15,7 @@ class Post {
   final String ville;
   final List<Faculty> faculties;
   final List<Unimage> unimages;
+  final List<Departement> departements;
 
   Post({
     required this.id,
@@ -31,13 +32,10 @@ class Post {
     required this.ville,
     required this.faculties,
     required this.unimages,
+    required this.departements,
   });
 
   factory Post.fromJson(Map<String, dynamic> json) {
-
-    if (json['faculties'] == null) {
-      throw ArgumentError('Faculties cannot be null');
-    }
     return Post(
       id: json['id'],
       nom: json['nom'],
@@ -51,12 +49,9 @@ class Post {
       acronyme: json['acronyme'],
       province: json['province'],
       ville: json['ville'],
-      faculties: (json['faculties'] as List<dynamic>)
-          .map((e) => Faculty.fromJson(e))
-          .toList(),
-      unimages: (json['unimages'] as List<dynamic>) // Parsing unimages
-          .map((e) => Unimage.fromJson(e))
-          .toList(),
+      faculties: (json['faculties'] as List<dynamic>?)?.map((e) => Faculty.fromJson(e)).toList() ?? [],
+      unimages: (json['unimages'] as List<dynamic>?)?.map((e) => Unimage.fromJson(e)).toList() ?? [],
+      departements: (json['departements'] as List<dynamic>?)?.map((e) => Departement.fromJson(e)).toList() ?? [],
     );
   }
 
@@ -85,7 +80,6 @@ class Faculty {
   }
 }
 
-
 class Unimage {
   final int id;
   final int universityId;
@@ -106,3 +100,35 @@ class Unimage {
   }
 }
 
+class Departement {
+  final int id;
+  final int universityId;
+  final int facultyId;
+  final String nom;
+  final String duree;
+  final String description;
+  final String facultyName;
+
+
+  Departement({
+    required this.id,
+    required this.universityId,
+    required this.facultyId,
+    required this.nom,
+    required this.facultyName,
+    required this.duree,
+    required this.description,
+  });
+
+  factory Departement.fromJson(Map<String, dynamic> json) {
+    return Departement(
+      id: json['id'],
+      universityId: json['university_id'],
+      facultyId: json['faculty_id'],
+      nom: json['nom'],
+      facultyName: json['faculty_name'],
+      duree: json['duree'],
+      description: json['description'],
+    );
+  }
+}
