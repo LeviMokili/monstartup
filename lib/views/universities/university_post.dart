@@ -28,7 +28,7 @@ class _UniversityPostState extends State<UniversityPost> {
                     height: 400,
                     color: Colors.blueGrey,
                     child: Image.network(
-                      "http://172.16.117.145:8000/images/universityposts/${unimage.image}",
+                      "http://192.168.100.4:8000/images/universityposts/${unimage.image}",
                       fit: BoxFit.cover,
                     ),
                   ),

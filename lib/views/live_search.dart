@@ -20,7 +20,7 @@ class _LiveSearchState extends State<LiveSearch> {
   List<dynamic> _results = [];
 
 
-  Future<void> _search(String query) async{
+  Future<void> _search(String query) async {
     if (query.isEmpty) {
       setState(() {
         _results = [];
@@ -28,12 +28,14 @@ class _LiveSearchState extends State<LiveSearch> {
       return;
     }
     final response = await http.get(
-      Uri.parse('http://172.16.117.145:8000/api/search?q=$query'),
+      Uri.parse('http://192.168.100.4:8000/api/search?q=$query'),
     );
 
     if (response.statusCode == 200) {
+      List<dynamic> jsonData = json.decode(response.body);
+
       setState(() {
-        _results = json.decode(response.body);
+        _results = jsonData.map((data) => Post.fromJson(data)).toList(); // Ensure correct type
       });
     }
   }
@@ -97,15 +99,16 @@ class _LiveSearchState extends State<LiveSearch> {
               child: ListView.builder(
                 itemCount: _results.length,
                 itemBuilder: (context, index) {
+                  final Post post = _results[index];
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: GestureDetector(
                       onTap: () {
-                        var post = _results[index];
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) =>  Profile(university: post),
+                            builder: (context) =>  Profile(
+                                university: post),
                           ),
                         );
                       },
@@ -131,8 +134,7 @@ class _LiveSearchState extends State<LiveSearch> {
                                           right: 74),
                                       child: Padding(
                                         padding: const EdgeInsets.only(left: 10),
-                                        child: Text(_results[index]['nom']
-                                         ,
+                                        child: Text(post.nom,
                                           style:  const TextStyle(
                                               fontSize: 13, fontWeight: FontWeight.w400, color: Colors.black),
                                         ),
@@ -145,7 +147,7 @@ class _LiveSearchState extends State<LiveSearch> {
                                     Padding(
                                       padding: const EdgeInsets.only(left: 10),
                                       child: Text(
-                                        'Université ${_results[index]['type_etablissement']} /',
+                                        'Université ${post.typeEtablissement} /',
                                         style:  const TextStyle(
                                             fontSize: 10,
                                             fontWeight: FontWeight.w200),
@@ -154,7 +156,7 @@ class _LiveSearchState extends State<LiveSearch> {
                                     Padding(
                                       padding: const EdgeInsets.only(left: 10),
                                       child: Text(
-                                        _results[index]['ville'],
+                                        post.ville,
                                         style:  const TextStyle(
                                             fontSize: 10,
                                             color: Colors.green,
