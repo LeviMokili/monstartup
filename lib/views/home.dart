@@ -30,7 +30,7 @@ class _HomeState extends State<Home> {
            child: Text('Shorts', style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
          ),
          SizedBox(height: 5,),
-         Shorts(),
+         // Shorts(),
 
          SizedBox(height: 10,),
          HomePost()

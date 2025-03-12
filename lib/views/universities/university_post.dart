@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../models/home_post.dart';
+import '../../models/university_posts.dart';
 class UniversityPost extends StatefulWidget {
   final Post university;
   const UniversityPost({super.key, required this.university});
@@ -28,7 +28,7 @@ class _UniversityPostState extends State<UniversityPost> {
                     height: 400,
                     color: Colors.blueGrey,
                     child: Image.network(
-                      "http://172.16.113.204:8000/images/universityposts/${unimage.image}",
+                      "http://172.16.117.145:8000/images/universityposts/${unimage.image}",
                       fit: BoxFit.cover,
                     ),
                   ),

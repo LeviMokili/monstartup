@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:startup/constant.dart';
-import 'package:startup/models/home_post.dart';
+import 'package:startup/models/university_posts.dart';
 import 'package:startup/views/home.dart';
 import 'package:startup/views/universities/university_post.dart';
 
-class SecondPage extends StatelessWidget {
-  final Post university;
+class Profile extends StatelessWidget {
+   final Post university;
+  //final dynamic university;
 
-  const SecondPage({super.key, required this.university});
+  const Profile({super.key, required this.university});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class SecondPage extends StatelessWidget {
           child: CircleAvatar(
             radius: 50,
             backgroundImage: NetworkImage(
-                "http://172.16.113.204:8000/images/${university.image}"),
+                "http://172.16.117.145:8000/images/${university.image}"),
           ),
         ),
         title: Column(
@@ -372,7 +373,7 @@ class SecondPage extends StatelessWidget {
                                           final departement = university.departements[index]; // Access each faculty
 
                                           return Container(
-                                            color: const Color(0xFFFFEDF1),
+                                            color: const Color(0xFFF8FAFB),
                                             child: Column(
                                               children: [
                                                  Padding(
@@ -400,7 +401,7 @@ class SecondPage extends StatelessWidget {
                                                    padding: const EdgeInsets.all(8.0),
                                                    child: Text(departement.description,
                                                      maxLines: 2,
-                                                     overflow: TextOverflow.visible, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+                                                     overflow: TextOverflow.visible, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w300),
                                                    ),
                                                  ))
 

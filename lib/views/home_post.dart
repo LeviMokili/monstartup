@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 import 'package:startup/services/post_service.dart';
-import 'package:startup/views/universities/second_page.dart';
+import 'package:startup/views/universities/profile.dart';
 
-import '../models/home_post.dart';
+import '../models/university_posts.dart';
 
 class HomePost extends StatefulWidget {
   const HomePost({super.key});
@@ -51,7 +51,7 @@ class _HomePostState extends State<HomePost> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => SecondPage(university: post),
+                                  builder: (context) => Profile(university: post),
                                 ),
                               );
                             },
@@ -83,7 +83,7 @@ class _HomePostState extends State<HomePost> {
                                           border: Border.all(color: Colors.white, width: 0),
                                           image: DecorationImage(
                                             image: NetworkImage(
-                                                "http://172.16.113.204:8000/images/${post.image}"), // Replace with actual image URL
+                                                "http://172.16.117.145:8000/images/${post.image}"), // Replace with actual image URL
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -168,7 +168,7 @@ class _HomePostState extends State<HomePost> {
                             width: double.infinity,
                             color: Colors.blueGrey,
                             child: Image.network(
-                                "http://172.16.113.204:8000/images/${post.imageCover}",
+                                "http://172.16.117.145:8000/images/${post.imageCover}",
                               fit: BoxFit.cover,
                             ),
                             // child: Image.asset(
