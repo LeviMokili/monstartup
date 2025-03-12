@@ -24,7 +24,7 @@ class Profile extends StatelessWidget {
           child: CircleAvatar(
             radius: 50,
             backgroundImage: NetworkImage(
-                "http://172.16.117.145:8000/images/${university.image}"),
+                "http://192.168.100.4:8000/images/${university.image}"),
           ),
         ),
         title: Column(

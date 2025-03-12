@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:startup/views/home_post.dart';
+import 'package:startup/views/live_search.dart';
 import 'package:startup/views/shorts.dart';
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -19,6 +20,21 @@ class _HomeState extends State<Home> {
           padding: const EdgeInsets.only(left: 20),
           child: Image.asset('assets/logo.png', width: 50, height: 50),
         ),
+        actions: [
+          IconButton(onPressed: (){
+            Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(builder: (context) =>  const LiveSearch()),
+                    (route) => false);
+          }, icon:  Container(
+            width: 30,
+            height: 30,
+            decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Color(0xFFF8FAFB)
+            ),
+            child: const Icon(Icons.search, size: 15),
+          ),)
+        ],
 
       ),
 
