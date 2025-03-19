@@ -24,7 +24,7 @@ class Profile extends StatelessWidget {
           child: CircleAvatar(
             radius: 50,
             backgroundImage: NetworkImage(
-                "http://192.168.100.4:8000/images/${university.image}"),
+                "http://192.168.1.4:8000/images/${university.image}"),
           ),
         ),
         title: Column(
@@ -81,7 +81,7 @@ class Profile extends StatelessWidget {
                             children: [
                               Expanded(
                                 child: ListView(
-                                  padding: EdgeInsets.all(10),
+                                  padding: const EdgeInsets.all(10),
                                   children: [
                                     Row(
                                       children: [

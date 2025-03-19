@@ -10,6 +10,8 @@ class UniversityPost extends StatefulWidget {
 }
 
 class _UniversityPostState extends State<UniversityPost> {
+
+
   @override
   Widget build(BuildContext context) {
     return  Expanded(
@@ -28,7 +30,7 @@ class _UniversityPostState extends State<UniversityPost> {
                     height: 400,
                     color: Colors.blueGrey,
                     child: Image.network(
-                      "http://192.168.100.4:8000/images/universityposts/${unimage.image}",
+                      "http://192.168.1.4:8000/images/universityposts/${unimage.image}",
                       fit: BoxFit.cover,
                     ),
                   ),

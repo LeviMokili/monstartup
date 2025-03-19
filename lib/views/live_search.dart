@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 import 'package:startup/views/universities/profile.dart';
 
 import '../models/university_posts.dart';
+import 'home.dart';
 
 
 class LiveSearch extends StatefulWidget {
@@ -28,7 +29,7 @@ class _LiveSearchState extends State<LiveSearch> {
       return;
     }
     final response = await http.get(
-      Uri.parse('http://192.168.100.4:8000/api/search?q=$query'),
+      Uri.parse('http://192.168.1.4:8000/api/search?q=$query'),
     );
 
     if (response.statusCode == 200) {
@@ -45,7 +46,11 @@ class _LiveSearchState extends State<LiveSearch> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: IconButton(onPressed: (){}, icon: const Icon(Icons.arrow_back)),
+        leading: IconButton(onPressed: (){
+          Navigator.of(context).pushAndRemoveUntil(
+              MaterialPageRoute(builder: (context) =>  const Home()),
+                  (route) => false);
+        }, icon: const Icon(Icons.arrow_back)),
       ),
       backgroundColor: Colors.white,
       body: Padding(

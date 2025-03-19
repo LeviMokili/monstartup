@@ -3,7 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-const baseURL = 'http://192.168.100.4:8000/api';
+const baseURL = 'http://192.168.1.4:8000/api';
 const postsURL = '$baseURL/get_all';
 
 // ----- Errors -----

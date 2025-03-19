@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
+import 'package:startup/models/university_posts.dart';
+import 'package:startup/services/post_service.dart';
 import 'package:startup/services/post_service.dart';
 import 'package:startup/views/universities/profile.dart';
-
-import '../models/university_posts.dart';
-
-class HomePost extends StatefulWidget {
-  const HomePost({super.key});
+class ReCatholique extends StatefulWidget {
+  const ReCatholique({super.key});
 
   @override
-  State<HomePost> createState() => _HomePostState();
+  State<ReCatholique> createState() => _ReCatholiqueState();
 }
 
-class _HomePostState extends State<HomePost> {
+class _ReCatholiqueState extends State<ReCatholique> {
   late Future<List<Post>> futurePosts;
 
   @override
@@ -20,7 +19,6 @@ class _HomePostState extends State<HomePost> {
     super.initState();
     futurePosts = ApiService.fetchPosts();
   }
-
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -102,7 +100,7 @@ class _HomePostState extends State<HomePost> {
                                     //   height: 300, // Adjust height for better spacing
                                     //   fit: BoxFit.cover,
                                     // ),
-                                    
+
 
                                   ),
                                 ),
@@ -123,7 +121,7 @@ class _HomePostState extends State<HomePost> {
                                           ),
                                         ],
                                       ),
-                                       Row(
+                                      Row(
                                         children: [
                                           Text(
                                             '${post.ville} /République Démocratique du Congo',
@@ -169,7 +167,7 @@ class _HomePostState extends State<HomePost> {
                             width: double.infinity,
                             color: Colors.blueGrey,
                             child: Image.network(
-                                "http://192.168.1.4:8000/images/${post.imageCover}",
+                              "http://192.168.1.4:8000/images/${post.imageCover}",
                               fit: BoxFit.cover,
                             ),
                             // child: Image.asset(
@@ -189,7 +187,7 @@ class _HomePostState extends State<HomePost> {
                               children: [
                                 GestureDetector(
                                     onTap: () {},
-                                    child: const LikeButton(
+                                    child:  const LikeButton(
                                         size: 20, likeCount: 45)),
                                 // const Padding(
                                 //   padding: EdgeInsets.only(bottom: 4),
@@ -204,8 +202,8 @@ class _HomePostState extends State<HomePost> {
                                     builder: (BuildContext context) {
                                       return SizedBox(
                                         height:
-                                            MediaQuery.of(context).size.height *
-                                                0.9,
+                                        MediaQuery.of(context).size.height *
+                                            0.9,
                                         // 90% of screen height
                                         width: double.infinity,
                                         child: Column(
@@ -214,28 +212,28 @@ class _HomePostState extends State<HomePost> {
                                             Expanded(
                                               child: ListView(
                                                 padding:
-                                                    const EdgeInsets.all(10),
+                                                const EdgeInsets.all(10),
                                                 children: [
                                                   const SizedBox(height: 10),
                                                   Row(
                                                     children: [
                                                       const Padding(
                                                         padding:
-                                                            EdgeInsets.only(
-                                                                left: 100),
+                                                        EdgeInsets.only(
+                                                            left: 100),
                                                         child: Text(
                                                           "Commentaires",
                                                           style: TextStyle(
                                                               fontWeight:
-                                                                  FontWeight
-                                                                      .w300,
+                                                              FontWeight
+                                                                  .w300,
                                                               fontSize: 20),
                                                         ),
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsets
-                                                                .only(left: 50),
+                                                        const EdgeInsets
+                                                            .only(left: 50),
                                                         child: IconButton(
                                                           onPressed: () {
                                                             Navigator.pop(
@@ -257,11 +255,11 @@ class _HomePostState extends State<HomePost> {
                                                         width: 40,
                                                         height: 40,
                                                         decoration:
-                                                            const BoxDecoration(
+                                                        const BoxDecoration(
                                                           color:
-                                                              Colors.blueGrey,
+                                                          Colors.blueGrey,
                                                           shape:
-                                                              BoxShape.circle,
+                                                          BoxShape.circle,
                                                         ),
                                                       ),
                                                       const SizedBox(width: 10),
@@ -270,21 +268,21 @@ class _HomePostState extends State<HomePost> {
                                                         // Ensures text does not overflow
                                                         child: Column(
                                                           crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
+                                                          CrossAxisAlignment
+                                                              .start,
                                                           // Align text to left
                                                           children: [
                                                             Padding(
                                                               padding: EdgeInsets
                                                                   .only(
-                                                                      top: 30),
+                                                                  top: 30),
                                                               child: Row(
                                                                 children: [
                                                                   Text(
                                                                     'levimokili',
                                                                     style: TextStyle(
                                                                         fontWeight:
-                                                                            FontWeight.w400),
+                                                                        FontWeight.w400),
                                                                   ),
                                                                   SizedBox(
                                                                     width: 30,
@@ -295,9 +293,9 @@ class _HomePostState extends State<HomePost> {
                                                                         color: Color(
                                                                             0xFF444444),
                                                                         fontSize:
-                                                                            10,
+                                                                        10,
                                                                         fontWeight:
-                                                                            FontWeight.w300),
+                                                                        FontWeight.w300),
                                                                   ),
                                                                 ],
                                                               ),
@@ -305,14 +303,14 @@ class _HomePostState extends State<HomePost> {
                                                             Text(
                                                               "I lobve it even more without the baby hair Let’s start that trend. Frontal lace wigs, zero bady hairee, more natural looking! I’m here for it.",
                                                               overflow:
-                                                                  TextOverflow
-                                                                      .ellipsis,
+                                                              TextOverflow
+                                                                  .ellipsis,
                                                               // Prevents overflow
                                                               maxLines: 20,
                                                               style: TextStyle(
                                                                   fontWeight:
-                                                                      FontWeight
-                                                                          .w300,
+                                                                  FontWeight
+                                                                      .w300,
                                                                   fontSize: 12),
                                                             )
                                                           ],
@@ -348,6 +346,6 @@ class _HomePostState extends State<HomePost> {
                   );
                 },
               );
-            }));
+            }));;
   }
 }
