@@ -19,7 +19,10 @@ class _ShortsState extends State<Shorts> {
          return Container(
            width: 100,
            margin: const EdgeInsets.all(5),
-           color: Colors.blueGrey,
+           decoration: const BoxDecoration(
+             color: Colors.blueGrey,
+             borderRadius: BorderRadius.all(Radius.circular(10)),
+           ),
 
          );
        },

@@ -154,7 +154,7 @@ class _HomePostState extends State<HomePost> {
                               child: Padding(
                                 padding: const EdgeInsets.only(top: 2),
                                 child: Text(
-                                  '##${post.typeEtablissement}',
+                                  '##${post.typeInstitue} ${post.typeEtablissement}',
                                   style: const TextStyle(
                                       fontSize: 9, color: Color(0xFFF6426C)),
                                 ),
