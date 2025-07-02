@@ -15,7 +15,12 @@ class Post {
   final String ville;
   final List<Faculty> faculties;
   final List<Unimage> unimages;
+  final List<SchoolImage> schoolimages;
+
+
   final List<Departement> departements;
+  final String type;
+
 
   Post({
     required this.id,
@@ -32,7 +37,10 @@ class Post {
     required this.ville,
     required this.faculties,
     required this.unimages,
+    required this.schoolimages,
     required this.departements,
+    required this.type,
+
   });
 
   factory Post.fromJson(Map<String, dynamic> json) {
@@ -52,6 +60,9 @@ class Post {
       faculties: (json['faculties'] as List<dynamic>?)?.map((e) => Faculty.fromJson(e)).toList() ?? [],
       unimages: (json['unimages'] as List<dynamic>?)?.map((e) => Unimage.fromJson(e)).toList() ?? [],
       departements: (json['departements'] as List<dynamic>?)?.map((e) => Departement.fromJson(e)).toList() ?? [],
+      schoolimages: (json['schoolimages'] as List?)?.map((e) => SchoolImage.fromJson(e)).toList() ?? [],
+
+      type: json['type'],
     );
   }
 
@@ -129,6 +140,27 @@ class Departement {
       facultyName: json['faculty_name'],
       duree: json['duree'],
       description: json['description'],
+    );
+  }
+}
+
+
+class SchoolImage {
+  final int id;
+  final int schoolId;
+  final String image;
+
+  SchoolImage({
+    required this.id,
+    required this.schoolId,
+    required this.image,
+  });
+
+  factory SchoolImage.fromJson(Map<String, dynamic> json) {
+    return SchoolImage(
+      id: json['id'],
+      schoolId: json['school_id'],
+      image: json['image'],
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 import 'package:startup/services/post_service.dart';
+import 'package:startup/views/schools/school_profile.dart';
 import 'package:startup/views/universities/profile.dart';
 
 import '../models/university_posts.dart';
@@ -15,6 +16,7 @@ class HomePost extends StatefulWidget {
 class _HomePostState extends State<HomePost> {
   late Future<List<Post>> futurePosts;
 
+
   @override
   void initState() {
     super.initState();
@@ -26,6 +28,7 @@ class _HomePostState extends State<HomePost> {
     return Expanded(
         child: FutureBuilder<List<Post>>(
             future: futurePosts,
+
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const Center(child: CircularProgressIndicator());
@@ -39,6 +42,7 @@ class _HomePostState extends State<HomePost> {
                 itemCount: posts.length,
                 itemBuilder: (context, index) {
                   final post = posts[index];
+
                   return Padding(
                     padding: const EdgeInsets.all(4.0),
                     child: Container(
@@ -51,7 +55,9 @@ class _HomePostState extends State<HomePost> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => Profile(university: post),
+                                  builder: (context) =>post.type == 'school'
+                                      ? SchoolProfile(school: post)
+                                      : Profile(university: post),
                                 ),
                               );
                             },
@@ -83,7 +89,7 @@ class _HomePostState extends State<HomePost> {
                                           border: Border.all(color: Colors.white, width: 0),
                                           image: DecorationImage(
                                             image: NetworkImage(
-                                                "http://192.168.1.4:8000/images/${post.image}"), // Replace with actual image URL
+                                                "http://172.16.113.64:8000/images/${post.type}/logo/${post.image}"), // Replace with actual image URL
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -164,21 +170,16 @@ class _HomePostState extends State<HomePost> {
                           const SizedBox(
                             height: 10,
                           ),
+
+
                           Container(
                             height: 340,
                             width: double.infinity,
                             color: Colors.blueGrey,
                             child: Image.network(
-                                "http://192.168.1.4:8000/images/${post.imageCover}",
+                              "http://172.16.113.64:8000/images/${post.type}/image_cover/${post.imageCover}",
                               fit: BoxFit.cover,
                             ),
-                            // child: Image.asset(
-                            //   'assets/homeposts/post.jpg',
-                            //   // Replace with your image path
-                            //   width: double.infinity,
-                            //   height: 300, // Adjust height for better spacing
-                            //   fit: BoxFit.cover,
-                            // ),
                           ),
                           const SizedBox(
                             height: 10,

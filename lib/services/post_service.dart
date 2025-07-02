@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:startup/models/university_posts.dart';
 
 class ApiService {
-  static const String apiUrl = "http://192.168.1.4:8000/api/getall";
+  static const String apiUrl = "http://172.16.113.64:8000/api/getall";
 
   static Future<List<Post>> fetchPosts() async {
     final response = await http.get(Uri.parse(apiUrl));

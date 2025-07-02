@@ -18,7 +18,7 @@ class _UniversityPostState extends State<UniversityPost> {
       child: ListView.builder(
         itemCount: widget.university.unimages.length,
         itemBuilder: (context, index) {
-          final unimage = widget.university.unimages[index];
+          final image = widget.university.unimages[index];
           return Container(
             margin: const EdgeInsets.symmetric(vertical: 3, horizontal: 3),
             child: Stack(
@@ -30,7 +30,7 @@ class _UniversityPostState extends State<UniversityPost> {
                     height: 400,
                     color: Colors.blueGrey,
                     child: Image.network(
-                      "http://192.168.1.4:8000/images/universityposts/${unimage.image}",
+                      "http://172.16.113.64:8000/images/universityposts/${image.image}",
                       fit: BoxFit.cover,
                     ),
                   ),

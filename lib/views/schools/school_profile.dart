@@ -1,10 +1,13 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:startup/models/university_posts.dart';
 import 'package:startup/views/home.dart';
 import 'package:startup/views/schools/school_post.dart';
+
 class SchoolProfile extends StatefulWidget {
-  const SchoolProfile({super.key});
+  final Post school;
+  const SchoolProfile({super.key, required this.school});
 
   @override
   State<SchoolProfile> createState() => _SchoolProfileState();
@@ -17,12 +20,15 @@ class _SchoolProfileState extends State<SchoolProfile> {
     appBar: AppBar(
 
       leading: Container(
-        margin: const EdgeInsets.all(6.0),
+        margin: const EdgeInsets.all(8.0),
         width: 100,
         height: 100,
         decoration: const BoxDecoration(
-          color: Colors.blueGrey,
-          shape: BoxShape.circle
+            color: Colors.blueGrey, shape: BoxShape.circle),
+        child: CircleAvatar(
+          radius: 50,
+          backgroundImage: NetworkImage(
+              "http://172.16.113.64:8000/images/school/logo/${widget.school.image}"),
         ),
       ),
 
@@ -68,7 +74,7 @@ class _SchoolProfileState extends State<SchoolProfile> {
                 showModalBottomSheet(
                     backgroundColor: Colors.white,
                     isScrollControlled: true,
-                    context: context, builder: (BuildContext contex){
+                    context: context, builder: (BuildContext context){
                   return SizedBox(
                     height: MediaQuery.of(context).size.height * 0.9, // 90% of screen height
                     width: double.infinity,
@@ -636,8 +642,8 @@ class _SchoolProfileState extends State<SchoolProfile> {
 
           ),
           const SizedBox(height: 10,),
-          const SchoolPost()
 
+          SchoolPost(school: widget.school,)
         ],
       ),
     );

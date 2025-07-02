@@ -24,7 +24,7 @@ class Profile extends StatelessWidget {
           child: CircleAvatar(
             radius: 50,
             backgroundImage: NetworkImage(
-                "http://192.168.1.4:8000/images/${university.image}"),
+                "http://172.16.113.64:8000/images/university/logo/${university.image}"),
           ),
         ),
         title: Column(
@@ -370,7 +370,7 @@ class Profile extends StatelessWidget {
                                         ),
                                         itemCount: university.departements.length,
                                         itemBuilder: (BuildContext context, int index) {
-                                          final departement = university.departements[index]; // Access each faculty
+                                          final department = university.departements[index]; // Access each faculty
 
                                           return Container(
                                             color: const Color(0xFFF8FAFB),
@@ -380,15 +380,15 @@ class Profile extends StatelessWidget {
                                                   padding:  const EdgeInsets.all(8.0),
                                                   child:  Row(
                                                     children: [
-                                                      Text('Faculté /${departement.facultyName}',maxLines: 3,
+                                                      Text('Faculté /${department.facultyName}',maxLines: 3,
                                                         style:  const TextStyle(fontSize: 12, ),
                                                       ),
                                                       const SizedBox(width: 10,),
-                                                    Text(departement.nom,maxLines: 3,
+                                                    Text(department.nom,maxLines: 3,
                                                        style:  const TextStyle(fontSize: 12, fontWeight: FontWeight.w300 ),
                                                       ),
                                                       const SizedBox(width: 10,),
-                                                      Text(departement.duree, style: const TextStyle(
+                                                      Text(department.duree, style: const TextStyle(
                                                         fontSize: 10,
                                                         fontWeight: FontWeight.w300,
                                                         color: Colors.red
@@ -399,7 +399,7 @@ class Profile extends StatelessWidget {
                                                 ),
                                                  Flexible(child: Padding(
                                                    padding: const EdgeInsets.all(8.0),
-                                                   child: Text(departement.description,
+                                                   child: Text(department.description,
                                                      maxLines: 2,
                                                      overflow: TextOverflow.visible, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w300),
                                                    ),

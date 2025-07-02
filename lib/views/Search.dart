@@ -19,7 +19,7 @@ class _SearchState extends State<Search> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(
+            const TextField(
 
               decoration: InputDecoration(labelText: "Enter Name"),
             ),
@@ -35,10 +35,10 @@ class _SearchState extends State<Search> {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: (){},
-              child: Text("Submit"),
+              child: const Text("Submit"),
             ),
           ],
         ),
