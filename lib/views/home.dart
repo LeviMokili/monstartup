@@ -22,11 +22,11 @@ class _HomeState extends State<Home> {
 
   // Define the content for each tab
   final List<Widget> _tabContents = [
-    HomePost(),
-    ReCatholique(),
-    Center(child: Text("Content for Tab 3", style: TextStyle(fontSize: 18))),
-    Center(child: Text("Content for Tab 4", style: TextStyle(fontSize: 18))),
-    Center(child: Text("Content for Tab 5", style: TextStyle(fontSize: 18))),
+    const HomePost(),
+    const ReCatholique(),
+    const Center(child: Text("Content for Tab 3", style: TextStyle(fontSize: 18))),
+    const Center(child: Text("Content for Tab 4", style: TextStyle(fontSize: 18))),
+    const Center(child: Text("Content for Tab 5", style: TextStyle(fontSize: 18))),
 
   ];
 
@@ -66,7 +66,7 @@ class _HomeState extends State<Home> {
            child: Text('Shorts', style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
          ),
          const SizedBox(height: 5,),
-         const Shorts(),
+         //const Shorts(),
 
         const SizedBox(height: 10,),
 

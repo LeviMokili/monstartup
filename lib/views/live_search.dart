@@ -27,7 +27,7 @@ class _LiveSearchState extends State<LiveSearch> {
       return;
     }
     final response = await http.get(
-      Uri.parse('http://192.168.1.4:8000/api/search?q=$query'),
+      Uri.parse('http://172.16.113.64:8000/api/search?q=$query'),
     );
 
     if (response.statusCode == 200) {
@@ -159,7 +159,7 @@ class _LiveSearchState extends State<LiveSearch> {
                                       Border.all(color: Colors.white, width: 0),
                                   image: DecorationImage(
                                     image: NetworkImage(
-                                        "http://192.168.1.4:8000/images/${post.image}"),
+                                        "http://172.16.113.64:8000/images/${post.type}/logo/${post.image}"),
                                     // Replace with actual image URL
                                     fit: BoxFit.cover,
                                   ),

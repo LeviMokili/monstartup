@@ -150,19 +150,24 @@ class _HomePostState extends State<HomePost> {
                             height: 10,
                           ),
                           Container(
-                            width: 400,
+                            width: 300,
                             margin: const EdgeInsets.only(right: 120),
-                            height: 22,
-                            color: const Color(0xFFFFEDF1),
+                            height: 30,
+                            color: const Color(0xFFF8FAFB),
 
                             child: Padding(
-                              padding: const EdgeInsets.all(3.0),
+                              padding: const EdgeInsets.all(5.0),
                               child: Padding(
                                 padding: const EdgeInsets.only(top: 2),
                                 child: Text(
-                                  '##${post.typeInstitue} ${post.typeEtablissement}',
+                                  post.type == 'university'
+                                      ? 'Université ${post.typeEtablissement}'
+                                      : 'École ${post.typeEtablissement}',
                                   style: const TextStyle(
-                                      fontSize: 9, color: Color(0xFFF6426C)),
+                                    fontSize: 9,
+                                    color: Color(0xFFF6426C),
+                                    fontWeight: FontWeight.w700
+                                  ),
                                 ),
                               ),
                             ),
@@ -176,10 +181,11 @@ class _HomePostState extends State<HomePost> {
                             height: 340,
                             width: double.infinity,
                             color: Colors.blueGrey,
-                            child: Image.network(
+                            child:Image.network(
                               "http://172.16.113.64:8000/images/${post.type}/image_cover/${post.imageCover}",
                               fit: BoxFit.cover,
-                            ),
+                              cacheWidth: 600,
+                            )
                           ),
                           const SizedBox(
                             height: 10,
