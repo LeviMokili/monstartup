@@ -19,9 +19,9 @@ class _SchoolSearchState extends State<SchoolSearch> {
           children: <Widget>[
             Text(
               isToggled ? 'Université' : 'Ecoles',
-              style: TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18),
             ),
-            SizedBox(width: 12),
+            const SizedBox(width: 12),
             Switch(
               value: isToggled,
               onChanged: (bool value) {
