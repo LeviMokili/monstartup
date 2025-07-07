@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 import 'package:startup/models/university_posts.dart';
 import 'package:startup/views/universities/profile.dart';
 import '../services/university_search.dart';
+import 'live_search.dart';
 
 class UniversitySearch extends StatefulWidget {
   const UniversitySearch({super.key});
@@ -18,10 +20,24 @@ class _UniversitySearchState extends State<UniversitySearch> {
   List<String> cities = [
     'Kinshasa',
     'Lubumbashi',
-    'Goma',
-    'Kisangani',
-    'Bukavu',
     'Mbuji-Mayi',
+    'Goma',
+    'Bukavu',
+    'Kisangani',
+    'Kananga',
+    'Kolwezi',
+    'Matadi',
+    'Boma',
+    'Likasi',
+    'Butembo',
+    'Uvira',
+    'Bandundu',
+    'Beni',
+    'Boende',
+    'Bunia',
+    'Buta',
+    'Gemena',
+    'Gbadolite'
   ];
 
   void search() async {
@@ -56,6 +72,7 @@ class _UniversitySearchState extends State<UniversitySearch> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           children: [
@@ -64,9 +81,17 @@ class _UniversitySearchState extends State<UniversitySearch> {
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: DropdownButtonFormField<String>(
                 value: selectedCity,
+
                 decoration: const InputDecoration(
-                  labelText: 'Ville',
-                  border: OutlineInputBorder(),
+                  labelText: 'Choisisez la Ville',
+                  labelStyle: TextStyle(
+                    color: Colors.blue, // Change this to any color you want
+                    fontWeight: FontWeight.w500,
+
+                  ),
+                  border: InputBorder.none,
+                  isDense: true, // Makes the field less tall
+                  contentPadding: const EdgeInsets.symmetric(vertical: 6, horizontal: 10),
                 ),
                 items: cities.map((city) {
                   return DropdownMenuItem<String>(
@@ -85,17 +110,39 @@ class _UniversitySearchState extends State<UniversitySearch> {
             const SizedBox(height: 12),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: TextField(
-                controller: facultyController,
-                decoration: const InputDecoration(
-                  hintText: "Faculty",
-                  border: OutlineInputBorder(),
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: Color(0xFFF8FAFB), // Light gray background
+                 // Rounded corners
                 ),
-              ),
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: TextField(
+                  controller: facultyController,
+                  decoration: const InputDecoration(
+                    hintText: "Ecrivez le nom du Faculté",
+                    hintStyle: TextStyle(
+                      fontSize: 13
+                    ),
+                    border: InputBorder.none,// Remove default border
+                    isDense: true, // Makes the field less tall
+                    contentPadding:  EdgeInsets.symmetric(vertical: 6, horizontal: 10),
+                  ),
+                ),
+              )
+
             ),
 
             const SizedBox(height: 12),
-            ElevatedButton(onPressed: search, child: const Text("Search")),
+            IconButton(onPressed: search, icon:  Container(
+              width: 40,
+              height: 40,
+              decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color(0xFFF8FAFB)
+              ),
+              child: const Icon(Icons.search, size: 15),
+            ),),
+
 
             Expanded(
               child: ListView.builder(
@@ -150,18 +197,16 @@ class _UniversitySearchState extends State<UniversitySearch> {
                                 const SizedBox(height: 4),
                                 Row(
                                   children: [
-                                    Text(
-                                      post.type == 'university'
-                                          ? 'Université ${post.typeEtablissement}'
-                                          : 'École ${post.typeEtablissement}',
+                                    Text('Université ${post.typeEtablissement}',
                                       style: const TextStyle(
                                         fontSize: 13,
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
                                     const SizedBox(width: 8),
-                                    Text(
-                                      post.ville,
+
+                                    Text('/ ${post.ville}'
+                                      ,
                                       style: const TextStyle(
                                         fontSize: 15,
                                         color: Colors.green,
