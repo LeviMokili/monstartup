@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 import 'package:startup/views/home_post.dart';
 import 'package:startup/views/live_search.dart';
 import 'package:startup/views/re_catholique.dart';
+import 'package:startup/views/school_search.dart';
 import 'package:startup/views/shorts.dart';
+import 'package:startup/views/university_search.dart';
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -11,6 +14,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  bool isToggled = false;
   int _selectedIndex = 0;
   final List<String> _tabs = ['Tout', 'Conventionnée Catholique', 'Privée', 'Conventionnée Ismalique', 'Public'];
 
@@ -38,7 +42,14 @@ class _HomeState extends State<Home> {
 
         leading: Padding(
           padding: const EdgeInsets.only(left: 20),
-          child: Image.asset('assets/logo.png', width: 50, height: 50),
+          child: Container(
+            width: 40,
+            height: 40,
+            decoration: const BoxDecoration(
+              shape:  BoxShape.circle,
+            ),
+            child: Image.asset('assets/startuplogo.jpeg'),
+          )
         ),
         actions: [
           IconButton(onPressed: (){
@@ -62,13 +73,77 @@ class _HomeState extends State<Home> {
      body:   Column(
        children:  [
          const Padding(
-           padding: EdgeInsets.only(right: 260),
-           child: Text('Shorts', style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+           padding: EdgeInsets.only(right: 250),
+           child: Text('Mona Startup', style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
          ),
          const SizedBox(height: 5,),
          //const Shorts(),
 
         const SizedBox(height: 10,),
+
+         Row(
+           mainAxisAlignment: MainAxisAlignment.center,
+           children: <Widget>[
+             Text(
+               isToggled ? 'Université' : 'Ecoles',
+               style: const TextStyle(fontSize: 14),
+             ),
+             const SizedBox(width: 12),
+             Transform.scale(
+               scale: 0.8,
+               child: Switch(
+                 value: isToggled,
+                 onChanged: (bool value) {
+                   setState(() {
+                     isToggled = value;
+                   });
+                 },
+                 activeColor: Colors.green,
+                 inactiveThumbColor: Colors.grey,
+               ),
+             ),
+             const SizedBox(width: 12),
+             // 🔍 Fixed search field with onTap
+             Container(
+               width: 180,
+               padding: const EdgeInsets.symmetric(horizontal: 12),
+               decoration: const BoxDecoration(
+                 color: Color(0xFFF5F5FA),
+
+               ),
+               height: 40,
+               child: Row(
+                 children: [
+                   Expanded(
+                     child: TextField(
+                       readOnly: true, // Prevents keyboard from opening
+                       onTap: () {
+                         Navigator.push(
+                           context,
+                           MaterialPageRoute(
+                             builder: (context) =>
+                             isToggled ? const UniversitySearch() : const SchoolSearch(),
+                           ),
+                         );
+                       },
+                       decoration: const InputDecoration(
+                         hintText: 'Recherche ...',
+                         border: InputBorder.none,
+                       ),
+                       style: const TextStyle(fontSize: 14),
+                     ),
+                   ),
+                   const Icon(Icons.search, size: 20, color: Colors.black),
+                 ],
+               ),
+             ),
+           ],
+         ),
+
+
+
+         const SizedBox(height: 20,),
+
 
          SingleChildScrollView(
            scrollDirection: Axis.horizontal,

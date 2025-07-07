@@ -16,6 +16,8 @@ class LiveSearch extends StatefulWidget {
 }
 
 class _LiveSearchState extends State<LiveSearch> {
+
+
   final TextEditingController _controller = TextEditingController();
   List<dynamic> _results = [];
 
@@ -40,6 +42,7 @@ class _LiveSearchState extends State<LiveSearch> {
       });
     }
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -195,10 +198,13 @@ class _LiveSearchState extends State<LiveSearch> {
                                         padding:
                                             const EdgeInsets.only(left: 10),
                                         child: Text(
-                                          '${post.typeInstitue} ${post.typeEtablissement}',
+                                          post.type == 'university'
+                                              ? 'Université ${post.typeEtablissement}'
+                                              : 'École ${post.typeEtablissement}',
                                           style: const TextStyle(
-                                              fontSize: 10,
-                                              fontWeight: FontWeight.w200),
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.w400
+                                          ),
                                         ),
                                       ),
                                       Padding(
@@ -207,7 +213,7 @@ class _LiveSearchState extends State<LiveSearch> {
                                         child: Text(
                                           post.ville,
                                           style: const TextStyle(
-                                              fontSize: 10,
+                                              fontSize: 15,
                                               color: Colors.green,
                                               fontWeight: FontWeight.w300),
                                         ),

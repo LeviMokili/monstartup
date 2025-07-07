@@ -46,25 +46,37 @@ class Post {
   factory Post.fromJson(Map<String, dynamic> json) {
     return Post(
       id: json['id'],
-      nom: json['nom'],
-      adresse: json['adresse'],
-      telephone: json['telephone'],
-      email: json['email'],
-      typeInstitue: json['type_institue'],
-      typeEtablissement: json['type_etablissement'],
-      image: json['image'],
-      imageCover: json['image_cover'],
-      acronyme: json['acronyme'],
-      province: json['province'],
-      ville: json['ville'],
-      faculties: (json['faculties'] as List<dynamic>?)?.map((e) => Faculty.fromJson(e)).toList() ?? [],
-      unimages: (json['unimages'] as List<dynamic>?)?.map((e) => Unimage.fromJson(e)).toList() ?? [],
-      departements: (json['departements'] as List<dynamic>?)?.map((e) => Departement.fromJson(e)).toList() ?? [],
-      schoolimages: (json['schoolimages'] as List?)?.map((e) => SchoolImage.fromJson(e)).toList() ?? [],
-
-      type: json['type'],
+      nom: json['nom'] ?? '',
+      adresse: json['adresse'] ?? '',
+      telephone: json['telephone'] ?? '',
+      email: json['email'] ?? '',
+      typeInstitue: json['type_institue'] ?? '',
+      typeEtablissement: json['type_etablissement'] ?? '',
+      image: json['image'] ?? '',
+      imageCover: json['image_cover'] ?? '',
+      acronyme: json['acronyme'] ?? '',
+      province: json['province'] ?? '',
+      ville: json['ville'] ?? '',
+      faculties: (json['faculties'] as List<dynamic>?)
+          ?.map((e) => Faculty.fromJson(e))
+          .toList() ??
+          [],
+      unimages: (json['unimages'] as List<dynamic>?)
+          ?.map((e) => Unimage.fromJson(e))
+          .toList() ??
+          [],
+      departements: (json['departements'] as List<dynamic>?)
+          ?.map((e) => Departement.fromJson(e))
+          .toList() ??
+          [],
+      schoolimages: (json['schoolimages'] as List?)
+          ?.map((e) => SchoolImage.fromJson(e))
+          .toList() ??
+          [],
+      type: json['type'] ?? '',
     );
   }
+
 
   static List<Post> fromJsonList(List<dynamic> jsonList) {
     return jsonList.map((json) => Post.fromJson(json)).toList();

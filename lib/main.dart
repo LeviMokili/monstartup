@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:startup/views/Search.dart';
 import 'package:startup/views/home.dart';
 import 'package:startup/views/live_search.dart';
+import 'package:startup/views/school_search.dart';
+import 'package:startup/views/search_field_sample.dart';
 
 
 
